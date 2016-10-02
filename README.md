@@ -18,13 +18,13 @@ Remember the Bacon is a web application inspired by Remember the milk built usin
 
 ## Design Docs
 
-* View Wireframes (./wireframes/)
-* React Components (./components.md)
-* API endpoints (./endpoints.md)
-* DB schema (./schema.md)
-* Redux Structure (./structure.md)
-* Sample State (./state.md)
-* Implementation Timeline (./timeline.md)
+* [View Wireframes] (./wireframes/)
+* [React Components] (./components.md)
+* [API endpoints] (./endpoints.md)
+* [DB schema] (./schema.md)
+* [Redux Structure] (./structure.md)
+* [Sample State] (./state.md)
+* [Implementation Timeline] (./timeline.md)
 
 Phase 1: Backend setup and Front End User Authentication (2 days)
 
