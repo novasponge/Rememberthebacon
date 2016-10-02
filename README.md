@@ -1,6 +1,6 @@
 # Remember the Bacon
 
-Heroku link
+Heroku link(replace by real link later)
 
 ## Minimum Viable Product
 
@@ -8,22 +8,23 @@ Remember the Bacon is a web application inspired by Remember the milk built usin
 
 * Hosting on Heroku
 * New account creation, login, and guest/demo login
-* Notes
-* Notebooks for organizing notes
-* Tags
-* Rich Text Editing
-* Infinite Scroll
-* Production README sample
+* Tasks
+* Lists of tasks grouped by category
+* List summary (time, num tasks, num completed)
+* Search
+* Bonus: Autocomplete SmartAdd of task properties
+* Bonus: Subtasks
+* Production README(replace by real link later)
 
 ## Design Docs
 
-View Wireframes
-React Components
-API endpoints
-DB schema
-Redux Structure
-Sample State
-Implementation Timeline
+* View Wireframes (./wireframes/)
+* React Components (./components.md)
+* API endpoints (./endpoints.md)
+* DB schema (./schema.md)
+* Redux Structure (./structure.md)
+* Sample State (./state.md)
+* Implementation Timeline (./timeline.md)
 
 Phase 1: Backend setup and Front End User Authentication (2 days)
 
