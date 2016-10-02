@@ -1,20 +1,21 @@
-Remember the Bacon
+# Remember the Bacon
 
-Heroku link Note: This should be a link to your production site
+Heroku link
 
-Minimum Viable Product
+## Minimum Viable Product
 
 Remember the Bacon is a web application inspired by Remember the milk built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
- Hosting on Heroku
- New account creation, login, and guest/demo login
- Notes
- Notebooks for organizing notes
- Tags
- Rich Text Editing
- Infinite Scroll
- Production README sample
-Design Docs
+* Hosting on Heroku
+* New account creation, login, and guest/demo login
+* Notes
+* Notebooks for organizing notes
+* Tags
+* Rich Text Editing
+* Infinite Scroll
+* Production README sample
+
+## Design Docs
 
 View Wireframes
 React Components
