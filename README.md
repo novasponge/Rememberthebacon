@@ -6,15 +6,14 @@ Heroku link(replace by real link later)
 
 Remember the Bacon is a web application inspired by Remember the milk built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
-* Hosting on Heroku
-* New account creation, login, and guest/demo login
-* Tasks
-* Lists of tasks grouped by category
-* List summary (time, num tasks, num completed)
-* Search
-* Bonus: Autocomplete SmartAdd of task properties
-* Bonus: Subtasks
-* Production README(replace by real link later)
+- [ ] Hosting on Heroku
+- [ ] New account creation, login, and guest/demo login
+- [ ] Create, view, edit, destroy tasks
+- [ ] Create, view, edit, destroy lists
+- [ ] store tasks into lists
+- [ ] list summary (time, num tasks, num completed)
+- [ ] Search
+- [ ] Production README(replace by real link later)
 
 ## Design Docs
 
@@ -26,79 +25,79 @@ Remember the Bacon is a web application inspired by Remember the milk built usin
 * [Sample State] (./doc/state.md)
 * [Implementation Timeline] (./doc/timeline.md)
 
-Phase 1: Backend setup and Front End User Authentication (2 days)
+Phase 1: - Backend setup and Front End User Authentication (1 day)
 
 Objective: Functioning rails project with front-end Authentication
 
- New Rails project
- User model/migration
- Back end authentication (session/password)
- StaticPages controller and root view
- Webpack & react/redux modules
- APIUtil to interact with the API
- Redux cycle for frontend authentication
- User signup/signin components
- Blank landing component after signup/signin
- Style signup/signin components
- Seed users
+ - [ ] New Rails project
+ - [ ] User model/migration
+ - [ ] Back end authentication (session/password)
+ - [ ] StaticPages controller and root view
+ - [ ] Webpack & react/redux modules
+ - [ ] APIUtil to interact with the API
+ - [ ] Redux cycle for frontend authentication
+ - [ ] User signup/signin components
+ - [ ] Blank landing component after signup/signin
+ - [ ] Style signup/signin components
+ - [ ] Seed users
  Review phase 1
-Phase 2: Notes Model, API, and components (2 days)
 
-Objective: Notes can be created, read, edited and destroyed through the API.
+Phase 2: - Tasks Model, API, and components (4 days)
 
- Note model
- Seed database with a small amount of test data
- CRUD API for notes (NotesController)
- JBuilder views for notes
-Note components and respective Redux loops
- NotesIndex
- NoteIndexItem
- NoteForm
- Autosave notes feature
- Style notes components
- Seed notes
-Phase 3: Notebooks (2 day)
+Objective: Tasks can be created, read, edited and destroyed through the API.
 
-Objective: Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+ - [ ] Task model and controller
+ - [ ] Seed database with a small amount of test data
+ - [ ] CRUD API for tasks (TasksController), create, destroy, update, show
+ - [ ] JBuilder views for Tasks
+ - [ ] Task components and respective Redux loops
+ - [ ] create tasks groups: inbox, alltasks, today, tomorrow, this week
+ - [ ] tasks can be completed
+ - [ ] group tasks by its due date
+ - [ ] TasksIndex
+ - [ ] TasksIndexItem
+ - [ ] AddTaskForm
+ - [ ] Style tasks components
+ - [ ] Seed tasks
 
- Notebook model
- Seed database with a small amount of test data
- CRUD API for notes (NotebooksController)
- JBuilder views for notebooks
- Adding notes requires a notebook
- Moving notes between notebooks
- Viewing notes by notebook
- Style notebook components
- Seed notebooks
-Phase 4: Tags (1 days)
+Phase 3: - lists (2.5 days)
 
-Objective: Notes can be tagged with multiple tags, and tags are searchable.
+Objective: Lists can be created and tasks belong to related lists that can be created, read, edited and destroyed through the API.
 
- Tag model and Taggings join table
- Fetching tags for notes
- Adding tags to notes
- Searching notes by tag
- Style search & tag components
- Seed tags with seed data
-Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+ - [ ] Lists model and controller
+ - [ ] Seed database with a small amount of test data
+ - [ ] CRUD API for lists (ListsController), create, destroy, update
+ - [ ] JBuilder views for lists
+ - [ ] Lists components and respective Redux loops
+ - [ ] vMoving tasks between lists
+ - [ ] Viewing tasks by lists
+ - [ ] Style lists components
+ - [ ] Seed lists
 
-objective: Allow rich text editing of notes.
+Phase 4: - list summary (1 day)
 
- Integrate react-quill (based on Quill.js).
- Rails helpers to sanitize HTML before rendering.
- Style Quill components.
- Add Quill styling to seeded notes
-Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+Objective: display the summary of list including number of tasks, due date, number of completed tasks.
 
-objective: Add infinite scroll to Notes Index
+ - [ ] list summary view based on current list status;
+ - [ ] style the app page
 
- Paginate Notes Index API to send 20 results at a time
- Append next set of results when user scrolls and is near bottom
- Style scroll components and transitions
- Ensure seed data demonstrates infinite scroll
+Phase 5: - search (1 day)
+
+Objective: search tasks.
+
+ - [ ] add search function which allows users to search tasks through different lists based on the keyword
+ - [ ] style the app page
+
+Phase 6: - review and testing (1 day)
+
+objective: app should have a professional style and operates smoothly
+
+ - [ ]  style the page
+ - [ ]  Add login through Facebook feature
+ - [ ]  Perform end-to-end testing to ensure usability
+ - [ ]  Obtain feedback from other users
+
 Bonus Features (TBD)
-
- Search notes by content
- Set reminders on notes
- Changelogs for Notes
- Multiple sessions
+ - [ ] Add location tag to tasks
+ - [ ] Add smart lists
+ - [ ] Subtasks
