@@ -1,34 +1,34 @@
+```js
 {
-  currentUser: {
-    id: 1,
-    username: "app-academy"
-  },
+  session:{
+    currentUser: {
+      id: 1,
+      username: "app-academy"
+      },
+    errors: []  
+  }
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},
-    createNote: {errors: ["body can't be blank"]}
+    createTasks: {errors: ["body can't be blank"]}
   },
 
   tasks: {
     1: {
-      title: "Sample State",
-      body: "is useful to plan",
       author_id: 1,
-      notebook_id: 1
-      tags: {
-        1: {
-          id: 1
-          name: "Coding"
-        }
-      }
+      name: "Sample State",
+      completed: "false",
+      start_date: "10-1-2016",
+      due_date: '10-1-2016',
+      priority: 1,
+      list_id: 1
     }
   },
-  notebooks: {
+  lists: {
     1: {
-      title: "Redux",
       author_id: 1,
-      description: "is cool"
+      name: "home list"
     }
   }
-  tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of notes
 }
+```

@@ -10,12 +10,7 @@ completed          | boolean   | not null, default: false
 start_date         | date      |
 due_date           | date      |
 priority           | integer   |
-estimate           | string    |
 list_id            | integer   | foreign key (references lists), indexed
-image_file_name    | string    |
-image_content_type | string    |
-image_file_size    | integer   |
-image_updated_at   | datetime  |
 
 ## lists
 column name | data type | details
