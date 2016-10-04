@@ -10,10 +10,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
+  "engines": {
+    "node": "6.5.0",
+    "npm": "3.10.3"
+  },
+
+  "scripts": {
+    "postinstall": "./node_modules/.bin/webpack"
+  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/novasponge/fullstack.git"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
