@@ -4,7 +4,7 @@ module.exports = {
   entry: './frontend/remember_the_bacon.jsx',
   output: {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-    filename: './app/assets/javascripts/bundle.js'
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
