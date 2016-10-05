@@ -8,7 +8,7 @@ class Api::TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(tasks_params)
+    @task = Task.new(task_params)
     if @task.save
       render :index
     else
@@ -18,13 +18,24 @@ class Api::TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    if @task.update(task_params)
+      render :index
+    else
+      render json: @task.errors.full_messages, status: 422
+    end
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    render :index
   end
 
-  def tasks_params
-    params.require('task').permit(:name, :start_date, :due_date, :priority, :list_id)
+  def task_params
+    params.require('task').permit(
+    :name, :start_date,
+    :due_date, :priority,
+    :list_id)
   end
 
 end
