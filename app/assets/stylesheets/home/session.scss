@@ -1,15 +1,15 @@
-.signup-body {
+.session-body {
   margin: 0 auto;
   position: relative;
 }
 
-.side {
+.session-side {
   float: left;
   width: 50%;
   background-color: #0060bf;
 }
 
-.signup-body:before {
+.session-body:before {
   content: "";
   height: 100%;
   width: 50%;
@@ -19,7 +19,7 @@
   position: absolute;
 }
 
-.side-logo {
+.session-side-logo {
   display: block;
   color: #fff;
   width: 179px;
@@ -31,25 +31,25 @@
   position: relative;
 }
 
-.side-logo-name {
+.session-side-logo-name {
   width: 100px;
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
-.signup-section {
+.session-section {
   float: right;
   width: 50%;
 }
 
-.signup-container {
+.session-container {
   width: 420px;
   margin-left: 33px;
-  margin-bottom: 500px;
+  margin-bottom: 520px;
 }
 
-.login-buttom {
+.session-buttom {
   float: right;
   margin: 43px -15px 0 0;
   font-size: 15px;
@@ -62,18 +62,14 @@
   border: transparent;
 }
 
-.signup-form-container {
-  display: block;
-}
-
-.form {
+.session-form-container {
   padding-top: 186px;
   padding-left: 30px;
   display: block;
 }
 
-.signup-username, .signup-email,
-.signup-password, .signup-text, .form-signup {
+.session-username, .signup-email,
+.session-password, .session-text, .form-session {
   display: block;
   font-size: 21px;
   font-weight: 500;
@@ -83,19 +79,20 @@
   margin-bottom: 10px;
 }
 
-.signup-text {
+.session-text {
   margin-bottom: 28px;
   margin-top: 20px;
   padding: 0;
   border: none;
 }
 
-.signup-username, .signup-email, .signup-password, .form-signup {
+.session-username, .signup-email,
+.session-password, .form-session {
   margin-bottom: 10px;
   width: 400px;
 }
 
-.form-signup {
+.form-session {
   margin-top: 25px;
   text-align: center;
   background-color: #009dff;

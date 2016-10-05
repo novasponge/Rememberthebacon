@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <main id='root'>
-      This should never be shown
-    </main>
-  </body>
-</html>
+<script type="text/javascript">
+   <% if logged_in? %>
+   window.currentUser = <%= render("api/users/user.json.jbuilder",
+   user: current_user).html_safe %>
+   <% end %>
+</script>
+
+<main id='root'>
+  This should never be shown
+</main>

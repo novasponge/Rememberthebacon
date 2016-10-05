@@ -34,20 +34,29 @@ class LoginForm extends React.Component {
 
   render(){
     return(
-      <section className="login-section">
-        <ul>
-          <li><Link to='/signup'>Sign up for free</Link></li>
-        </ul>
-        <h2>Been here before? Welcome back!</h2>
-        <form className="login-form" onSubmit={this.handleSubmit}>
-          <input type='text' value={this.state.info}
-            onChange={this.handleUserInfoInput}
-            placeholder="Email or username"/>
-          <input type='password' value={this.state.password}
-            onChange={this.handlePasswordInput}
-            placeholder="Password"/>
-          <button>Log in</button>
-        </form>
+      <section className="session-body group">
+        <div className="session-side group">
+          <a href="/" className='session-side-logo'>
+            <h1 className="session-side-logo-name">Remember the bacon</h1>
+          </a>
+        </div>
+        <section className="session-section">
+          <div className="session-container group">
+            <Link className="session-buttom" to='/signup'>Sign up for free</Link>
+            <div className="session-form-container">
+              <h2 className="session-text">Been here before? Welcome back!</h2>
+              <form className="login-form" onSubmit={this.handleSubmit}>
+                <input className="session-username" type='text' value={this.state.info}
+                  onChange={this.handleUserInfoInput}
+                  placeholder="Email or username"/>
+                <input className="session-password" type='password' value={this.state.password}
+                  onChange={this.handlePasswordInput}
+                  placeholder="Password"/>
+                <button className="form-session">Log in</button>
+              </form>
+            </div>
+          </div>
+        </section>
       </section>
     );
   }

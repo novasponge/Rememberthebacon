@@ -6,8 +6,6 @@ import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 
 const Root = ({ store }) => {
-  let path;
-
   const _redirectIfLoggedIn = (nextState, replace) => {
     if (store.getState().session.currentUser) {
       replace('/');
