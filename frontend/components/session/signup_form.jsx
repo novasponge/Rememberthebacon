@@ -29,7 +29,7 @@ class SignupForm extends React.Component {
     this.setState({email_address: e.target.value});
     const emailAddress = e.target.value;
     if (emailAddress.match(EMAILREG)) {
-      this.props.clearErrors();
+      this.props.clearErrors("Invalid email address");
     } else {
       if (!this.props.errors.includes("Invalid email address")) {
         this.props.receiveErrors(this.props.errors.concat(["Invalid email address"]));
@@ -46,7 +46,7 @@ class SignupForm extends React.Component {
     const password = this.state.password;
 
     if (password.match(STRONGPASSWORD)) {
-      this.props.clearErrors();
+      this.props.clearErrors("Password is too weak");
     } else {
       if (!this.props.errors.includes("Password is too weak")) {
         this.props.receiveErrors(this.props.errors.concat(["Password is too weak"]));
@@ -63,11 +63,11 @@ class SignupForm extends React.Component {
   render(){
     let emailError;
     let passwordError;
-     this.props.errors.forEach(error => {
+     this.props.errors.map(error => {
        if (error === "Invalid email address") {
          emailError = <div className="email-error">{error}</div>;
        } else if (error === "Password is too weak") {
-         passwordError = <div className="password-error">{error}</div>;
+         passwordError = <div className='password-error'>{error}</div>;
        }
     });
 

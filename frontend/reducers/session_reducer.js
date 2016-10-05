@@ -13,7 +13,8 @@ const SessionReducer = (state = _defaultState, action) => {
     case RECEIVE_ERRORS:
       return merge({}, state, {errors: action.errors});
     case CLEAR_ERRORS:
-      const nextState = Object.assign({}, state, {errors:[]});
+      const nextErrors = state.errors.filter(error => error !== action.error);
+      const nextState = Object.assign({}, state, {errors:nextErrors});
       return nextState;
     case LOGOUT:
       return {
