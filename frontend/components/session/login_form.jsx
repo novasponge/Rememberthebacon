@@ -33,6 +33,7 @@ class LoginForm extends React.Component {
   }
 
   render(){
+    const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return(
       <section className="session-body group">
         <div className="session-side group">
@@ -52,6 +53,9 @@ class LoginForm extends React.Component {
                 <input className="session-password" type='password' value={this.state.password}
                   onChange={this.handlePasswordInput}
                   placeholder="Password"/>
+                <ul>
+                  {errors}
+                </ul>
                 <button className="form-session">Log in</button>
               </form>
             </div>
