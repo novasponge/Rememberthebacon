@@ -6,9 +6,9 @@ const App = ({ children }) => {
   <div>
     <header className="header">
       <nav className="header-nav group">
-        <h1 className='header-logo'>
-          <a href="/" className='header-logo-name'>Remember the bacon</a>
-        </h1>
+        <a href="/" className='header-logo'>
+          <h1 className="header-logo-name">Remember the bacon</h1>
+        </a>
         <GreetingContainer />
         { children }
       </nav>

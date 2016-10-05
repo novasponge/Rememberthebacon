@@ -34,10 +34,12 @@ class LoginForm extends React.Component {
 
   render(){
     return(
-      <section>
-        <li><Link to='/signup'>Sign up for free</Link></li>
+      <section className="login-section">
+        <ul>
+          <li><Link to='/signup'>Sign up for free</Link></li>
+        </ul>
         <h2>Been here before? Welcome back!</h2>
-        <form className="session_form" onSubmit={this.handleSubmit}>
+        <form className="login-form" onSubmit={this.handleSubmit}>
           <input type='text' value={this.state.info}
             onChange={this.handleUserInfoInput}
             placeholder="Email or username"/>

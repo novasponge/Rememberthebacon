@@ -8,6 +8,7 @@
   width: 970px;
   margin: 0 auto;
 }
+
 .header-logo {
   float: left;
   color: #fff;
@@ -16,14 +17,12 @@
   margin: 12px 0 18px 2px;
   background-size: auto 100%;
   background-repeat: no-repeat;
-  background-position: left;
   background-image: asset-url("bacon.png");
   position: relative;
 }
 
 .header-logo-name {
   width: 100px;
-  display: block;
   position: absolute;
   bottom: 0;
   right: 0;

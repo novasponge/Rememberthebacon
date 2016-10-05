@@ -63,22 +63,31 @@ class SignupForm extends React.Component {
   render(){
     let errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return(
-      <section>
-        <ul>{errors}</ul>
-        <li><Link to="/login">Log in</Link></li>
-        <h2>Sign up for free</h2>
-        <form className="session_form" onSubmit={this.handleSubmit}>
-          <input type='text' value={this.state.username}
-            onChange={this.handleUsernameInput}
-            placeholder="Username"/>
-          <input type='text' value={this.state.email_address}
-            onChange={this.handleEmailInput}
-            placeholder="Email"/>
-          <input type='password' value={this.state.password}
-            onChange={this.handlePasswordInput}
-            placeholder="Password"/>
-          <button>Sign up!</button>
-        </form>
+      <section className="signup-body group">
+        <section className="side group">
+          <h1 className='side-logo'>
+            <a href="/" className='side-logo-name'>Remember the bacon</a>
+          </h1>
+        </section>
+        <section className="signup-section">
+          <ul>
+            <li><Link to="/login">Log in</Link></li>
+            {errors}
+          </ul>
+          <h2>Sign up for free</h2>
+          <form className="signup-form" onSubmit={this.handleSubmit}>
+            <input type='text' value={this.state.username}
+              onChange={this.handleUsernameInput}
+              placeholder="username"/>
+            <input type='text' value={this.state.email_address}
+              onChange={this.handleEmailInput}
+              placeholder="email"/>
+            <input type='password' value={this.state.password}
+              onChange={this.handlePasswordInput}
+              placeholder="Password"/>
+            <button>Sign up!</button>
+          </form>
+        </section>
       </section>
     );
   }

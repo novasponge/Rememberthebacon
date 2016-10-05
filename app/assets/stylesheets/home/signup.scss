@@ -1,0 +1,36 @@
+.signup-body {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.side {
+  float: left;
+  width: 50%;
+  background-color: #0060bf;
+}
+
+.side-logo {
+  margin: 0 auto;
+  color: #fff;
+  width: 179px;
+  height: 83px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: asset-url("bacon.png");
+  position: relative;
+}
+
+.side-logo-name {
+  width: 100px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.signup-section {
+  float: right;
+  width: 50%;
+}
