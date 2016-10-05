@@ -7,6 +7,10 @@ class User < ApplicationRecord
     class_name: 'List',
     foreign_key: :author_id
 
+  has_many :tasks,
+    through: :lists,
+    source: :tasks
+
   after_initialize :ensure_session_token
 
   attr_reader :password
