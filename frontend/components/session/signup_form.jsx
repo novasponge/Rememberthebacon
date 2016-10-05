@@ -61,32 +61,46 @@ class SignupForm extends React.Component {
   }
 
   render(){
-    let errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
+    let emailError;
+    let passwordError;
+     this.props.errors.forEach(error => {
+       if (error === "Invalid email address") {
+         emailError = <div className="email-error">{error}</div>;
+       } else if (error === "Password is too weak") {
+         passwordError = <div className="password-error">{error}</div>;
+       }
+    });
+
     return(
       <section className="signup-body group">
-        <section className="side group">
-          <h1 className='side-logo'>
-            <a href="/" className='side-logo-name'>Remember the bacon</a>
-          </h1>
-        </section>
+        <div className="side group">
+          <a href="/" className='side-logo'>
+            <h1 className="side-logo-name">Remember the bacon</h1>
+          </a>
+        </div>
         <section className="signup-section">
-          <ul>
-            <li><Link to="/login">Log in</Link></li>
-            {errors}
-          </ul>
-          <h2>Sign up for free</h2>
-          <form className="signup-form" onSubmit={this.handleSubmit}>
-            <input type='text' value={this.state.username}
-              onChange={this.handleUsernameInput}
-              placeholder="username"/>
-            <input type='text' value={this.state.email_address}
-              onChange={this.handleEmailInput}
-              placeholder="email"/>
-            <input type='password' value={this.state.password}
-              onChange={this.handlePasswordInput}
-              placeholder="Password"/>
-            <button>Sign up!</button>
-          </form>
+          <div className="signup-container group">
+            <Link className="login-buttom" to="/login">Log in</Link>
+            <div className="Signup-form-container">
+              <div className="form">
+                <h2 className="signup-text">Sign up for free</h2>
+                <form className="signup-form" onSubmit={this.handleSubmit}>
+                  <input className="signup-username" type='text' value={this.state.username}
+                    onChange={this.handleUsernameInput}
+                    placeholder="username"/>
+                  <input  className="signup-email" type='text' value={this.state.email_address}
+                    onChange={this.handleEmailInput}
+                    placeholder="email"/>
+                  {emailError}
+                  <input className="signup-password" type='password' value={this.state.password}
+                    onChange={this.handlePasswordInput}
+                    placeholder="Password"/>
+                  {passwordError}
+                  <button className="form-signup">Sign up!</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </section>
       </section>
     );

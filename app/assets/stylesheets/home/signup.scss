@@ -1,7 +1,6 @@
 .signup-body {
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  position: relative;
 }
 
 .side {
@@ -10,21 +9,30 @@
   background-color: #0060bf;
 }
 
+.signup-body:before {
+  content: "";
+  height: 100%;
+  width: 50%;
+  background: #0060bf;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
 .side-logo {
-  margin: 0 auto;
+  display: block;
   color: #fff;
   width: 179px;
   height: 83px;
+  margin: 12px 50% 18px 25%;
   background-size: auto 100%;
   background-repeat: no-repeat;
-  background-position: left;
   background-image: asset-url("bacon.png");
   position: relative;
 }
 
 .side-logo-name {
   width: 100px;
-  display: block;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -33,4 +41,65 @@
 .signup-section {
   float: right;
   width: 50%;
+}
+
+.signup-container {
+  width: 420px;
+  margin-left: 33px;
+  margin-bottom: 500px;
+}
+
+.login-buttom {
+  float: right;
+  margin: 43px -15px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 5px 11px 4px;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,96,191,0.1);
+  border-radius: 3px;
+  border: transparent;
+}
+
+.signup-form-container {
+  display: block;
+}
+
+.form {
+  padding-top: 186px;
+  padding-left: 30px;
+  display: block;
+}
+
+.signup-username, .signup-email,
+.signup-password, .signup-text, .form-signup {
+  display: block;
+  font-size: 21px;
+  font-weight: 500;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.signup-text {
+  margin-bottom: 28px;
+  margin-top: 20px;
+  padding: 0;
+  border: none;
+}
+
+.signup-username, .signup-email, .signup-password, .form-signup {
+  margin-bottom: 10px;
+  width: 400px;
+}
+
+.form-signup {
+  margin-top: 25px;
+  text-align: center;
+  background-color: #009dff;
+  cursor: pointer;
+  border-color: transparent;
+  color: #fff;
 }
