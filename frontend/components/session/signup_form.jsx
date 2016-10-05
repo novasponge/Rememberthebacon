@@ -20,10 +20,12 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.errors.length === 0) {
+    if (this.props.errors.includes("Invalid email address") || this.props.errors.includes("Password is too weak" )) {
+      return;
+    } else {
       this.props.signup(this.state);
     }
-    // comebeck later to fix handle error this.props.clearErrors();
+    // comebeck later to fix handle error
   }
 
   handleEmailInput(e) {
@@ -64,11 +66,15 @@ class SignupForm extends React.Component {
   render(){
     let emailError;
     let passwordError;
+    let userError;
+
     this.props.errors.map(error => {
       if (error.toLowerCase().indexOf("email") != -1) {
         emailError = <div className="email-error">{error}</div>;
       } else if (error.toLowerCase().indexOf("password") != -1) {
         passwordError = <div className='password-error'>{error}</div>;
+      } else if (error.toLowerCase().indexOf("username") != -1) {
+        userError = <div className='user-error'>{error}</div>;
       }
     });
 
@@ -88,6 +94,7 @@ class SignupForm extends React.Component {
                 <input className="session-username" type='text' value={this.state.username}
                   onChange={this.handleUsernameInput}
                   placeholder="username"/>
+                {userError}
                 <input  className="signup-email" type='text' value={this.state.email_address}
                   onChange={this.handleEmailInput}
                   placeholder="email"/>
