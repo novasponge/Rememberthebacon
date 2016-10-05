@@ -87,7 +87,7 @@ class SignupForm extends React.Component {
         </div>
         <section className="session-section">
           <div className="session-container group">
-            <Link className="session-buttom" to="/login">Log in</Link>
+            <Link className="session-buttom" to="/login" onClick={this.props.clearErrors}>Log in</Link>
             <div className="session-form-container">
               <h2 className="session-text">Sign up for free</h2>
               <form className="signup-form" onSubmit={this.handleSubmit}>
