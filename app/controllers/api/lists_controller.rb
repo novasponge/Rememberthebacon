@@ -4,9 +4,9 @@ class Api::ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
+    @list = current_user.lists.new(list_params)
     if @list.save
-      render :index
+      render :show
     else
       render json: @list.errors.full_messages, status: 422
     end
@@ -15,7 +15,7 @@ class Api::ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    render :index
+    render :show
   end
 
   def show
@@ -25,13 +25,14 @@ class Api::ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
-      render :index
+      render :show
     else
       render json: @list.errors.full_messages, status: 422
     end
   end
 
   def list_params
-    params.require("list").permit(:name, :author_id)
+    # user current user
+    params.require(:list).permit(:name)
   end
 end
