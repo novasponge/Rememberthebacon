@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+// .logo {
+//   background-image: asset-url("logo.png");
+// }
+
+html, body, header, nav, h1, a, ul, li,
+section, img, div, h2, p,
+form, label, input, textarea,
+button, article, footer {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+body {
+  font-family: sans-serif,
+  Arial, Helvetica;
+  font-weight: 16px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.group:after {
+  display: block;
+  content: "";
+  clear: both;
+}

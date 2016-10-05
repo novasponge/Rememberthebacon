@@ -11,9 +11,9 @@ const Greeting = (props) => {
     );
   } else {
     return(
-      <ul>
-        <li><Link to='/signup'>Sign Up</Link></li>
-        <li><Link to='/login'>Log In</Link></li>
+      <ul className='header-list'>
+        <li><Link to='/login'>Log in</Link></li>
+        <li className="signup-link"><Link to='/signup'>Sign up for free</Link></li>
       </ul>
     );
   }

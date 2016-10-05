@@ -1,0 +1,54 @@
+.header {
+  display: block;
+  background: #5bb84d;
+  border-bottom: 1px solid #aaa;
+}
+
+.header-nav {
+  width: 970px;
+  margin: 0 auto;
+}
+.header-logo {
+  float: left;
+  color: #fff;
+  width: 179px;
+  height: 83px;
+  margin: 12px 0 18px 2px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: asset-url("bacon.png");
+  position: relative;
+}
+
+.header-logo-name {
+  width: 100px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.header-list {
+  float: right;
+  color: #fff;
+  font-size: 15px;
+  margin-top: 42px;
+}
+
+.header-list li {
+  float: left;
+  margin-left: 25px;
+}
+
+.header-list li a {
+  font-weight: 300;
+  padding: 4px 11px;
+  opacity: .8;
+  display: block;
+}
+
+.signup-link {
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
