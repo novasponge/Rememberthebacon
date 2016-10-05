@@ -25,7 +25,6 @@ class SignupForm extends React.Component {
     } else {
       this.props.signup(this.state);
     }
-    // comebeck later to fix handle error
   }
 
   handleEmailInput(e) {
@@ -59,7 +58,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.loggedIn){
-      this.props.router.push("/");
+      this.props.router.push("/app");
     }
   }
 

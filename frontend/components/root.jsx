@@ -1,7 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import App from './app';
+import Home from './home';
+import AppContainer from './app/app_container'
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 
@@ -15,11 +16,10 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={App}>
-
-        </Route>
+        <Route path='/' component={Home}/>
         <Route path='/login' component={LoginFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path='/signup' component={SignupFormContainer} onEnter={_redirectIfLoggedIn} />
+        <Route path='/app' component={AppContainer} />
       </Router>
     </Provider>
   )

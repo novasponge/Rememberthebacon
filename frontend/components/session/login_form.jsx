@@ -1,5 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+//
+// class Component {
+//   constuctor(props) {
+//     this.props = props;
+//   }
+// }
 
 class LoginForm extends React.Component {
   constructor(props){
@@ -28,7 +34,7 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.loggedIn){
-      this.props.router.push("/");
+      this.props.router.push("/app");
     }
   }
 
