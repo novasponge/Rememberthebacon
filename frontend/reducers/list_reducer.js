@@ -7,6 +7,7 @@ const ListReducer = (state = {}, action) => {
       return action.lists;
     case RECEIVE_ONE_LIST:
       const newList = {[action.list.id]: action.list};
+      debugger
       return merge({}, state, newList);
     case REMOVE_LIST:
       const listId = action.id;

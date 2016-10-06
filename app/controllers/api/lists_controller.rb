@@ -4,7 +4,8 @@ class Api::ListsController < ApplicationController
   end
 
   def create
-    @list = current_user.lists.new(list_params)
+    @list = List.new(list_params)
+    @list.author_id = current_user.id
     if @list.save
       render :show
     else

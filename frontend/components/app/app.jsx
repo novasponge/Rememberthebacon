@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 import AppHeader from './app_header';
 import AppSide from './app_side_bar';
 
-
 class App extends React.Component {
 
   componentWillReceiveProps(nextProps) {

@@ -10,6 +10,12 @@ const ListMiddleware = (store) => (next) => (action) => {
       error = (data) => console.log(data);
       UTILS.fetchLists(success, error);
       return next(action);
+    case ACTIONS.CREATE_LIST:
+      success = (data) => store.dispatch(ACTIONS.receiveOneList(data));
+      error = (data) => console.log(data);
+      UTILS.createListReq(action.list, success, error);
+      debugger
+      return next(action);
     default:
       return next(action);
   }

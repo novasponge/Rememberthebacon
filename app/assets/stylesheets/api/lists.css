@@ -1,0 +1,37 @@
+.list-form-container {
+  padding: 29px 37px;
+}
+
+.list-form {
+  margin-top: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.list-name {
+  text-align: left;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.list-form-button {
+  font-weight: bold;
+  padding: 6px 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #fff;
+  background-color: rgb(1, 124, 249);
+  cursor: pointer;
+}
+.add-list {
+  margin-top: 12px;
+  padding: 6px 13px;
+}
+
+.list-form-name {
+  font-size: 18px;
+}
+
+.list-form label {
+  font-size: 13px;
+}

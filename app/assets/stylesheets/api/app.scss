@@ -19,12 +19,10 @@
 .app-side-bar {
   float: left;
   height: 100%;
-  display: block;
   width: 180px;
 }
 
 .app-side-logo {
-  float: left;
   color: #0060bf;
   width: 179px;
   height: 83px;
@@ -33,6 +31,7 @@
   background-repeat: no-repeat;
   background-image: asset-url("bacon.png");
   position: relative;
+  display: block;
 }
 
 .app-side-logo-name {
