@@ -14,7 +14,6 @@ const ListMiddleware = (store) => (next) => (action) => {
       success = (data) => store.dispatch(ACTIONS.receiveOneList(data));
       error = (data) => console.log(data);
       UTILS.createListReq(action.list, success, error);
-      debugger
       return next(action);
     default:
       return next(action);
