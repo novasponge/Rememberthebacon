@@ -1,0 +1,43 @@
+.app-header {
+  width: 100%;
+  height: 32px;
+  background-color: #0060bf;
+}
+
+.logout {
+  float: right;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.app-body {
+  width: 100%;
+  background-color: #d9e7f5;
+}
+
+.app-side-bar {
+  float: left;
+  height: 100%;
+  display: block;
+  width: 180px;
+}
+
+.app-side-logo {
+  float: left;
+  color: #0060bf;
+  width: 179px;
+  height: 83px;
+  margin: 12px 0 18px 2px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-image: asset-url("bacon.png");
+  position: relative;
+}
+
+.app-side-logo-name {
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

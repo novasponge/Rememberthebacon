@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import AppHeader from './app_header';
+import AppSide from './app_side_bar';
+
 
 class App extends React.Component {
 
@@ -13,10 +15,15 @@ class App extends React.Component {
   render() {
     if (this.props.loggedIn) {
       return(
-        <div>
+        <div className="app-body">
           <AppHeader />
+          <div className="Content group">
+            <AppSide />
+          </div>
         </div>
       );
+    } else {
+      return <div>Fix this later</div>;
     }
   }
 }

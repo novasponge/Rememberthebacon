@@ -3,8 +3,8 @@ import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
 const AppHeader = (props) => (
-  <div className="app-header">
-    <button onClick={props.logout}>logout</button>
+  <div className="app-header group">
+    <button className="logout" onClick={props.logout}>logout</button>
   </div>
 );
 

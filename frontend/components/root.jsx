@@ -9,14 +9,14 @@ import LoginFormContainer from './session/login_form_container';
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     if (store.getState().session.currentUser) {
-      replace('/');
+      replace('/app');
     }
   };
 
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={Home}/>
+        <Route path='/' component={Home} onEnter={_redirectIfLoggedIn}/>
         <Route path='/login' component={LoginFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path='/signup' component={SignupFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path='/app' component={AppContainer} />
