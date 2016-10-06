@@ -1,9 +1,11 @@
 import { applyMiddleware} from 'redux';
-import SessionMiddleware from './session_middleware';
 import createLogger from 'redux-logger';
+import SessionMiddleware from './session_middleware';
+import ListMiddleware from './list_middleware';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
+  ListMiddleware,
   createLogger()
 );
 
