@@ -3,7 +3,7 @@ import * as UTILS from '../util/list_api_util';
 
 const ListMiddleware = (store) => (next) => (action) => {
   let success;
-  let error = (data) => console.log(error);
+  let error = (data) => console.log(data);
   switch (action.type) {
     case ACTIONS.FETCH_ALL_LISTS:
       success = (data) => store.dispatch(ACTIONS.receiveAllLists(data));

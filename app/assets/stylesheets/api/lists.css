@@ -45,3 +45,15 @@
 .list-buttons:hover{
   color: #0060bf;
 }
+
+.list-show-container {
+  position: fixed;
+  left: 180px;
+  top: 42px;
+  width: 490px;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
