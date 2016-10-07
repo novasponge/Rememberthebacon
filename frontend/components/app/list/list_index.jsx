@@ -14,10 +14,6 @@ class ListIndex extends React.Component{
     this.props.destroyList(id);
   }
 
-  handleEditClick(id, e) {
-    e.stopPropagation();
-  }
-
   handleListShow(e) {
     e.stopPropagation();
   }
@@ -26,13 +22,13 @@ class ListIndex extends React.Component{
     const AllLists = this.props.lists.map(list =>
       <li key={list.id} onClick={this.handleListShow.bind(this)}>
         {list.name}
-          <i className="fa fa-minus-square-o list-delete-button"
+          <i className="fa fa-minus-square-o list-buttons"
             aria-hidden="true"
             onClick={this.handleRemoveClick.bind(this, list.id)}>
           </i>
-          <i className="fa fa-pencil-square-o"
+          <i className="fa fa-pencil-square-o list-buttons"
             aria-hidden="true"
-            onClick={this.handleListShow.bind(this, this.id)}>
+            onClick={this.props.handleEditList.bind(null, list.id)}>
           </i>
       </li>);
 

@@ -36,12 +36,12 @@
   font-size: 13px;
 }
 
-.list-delete-button {
+.list-buttons {
   float: right;
   padding-right: 5px;
   color: #98AFC7;
 }
 
-.list-delete-button:hover{
+.list-buttons:hover{
   color: #0060bf;
 }

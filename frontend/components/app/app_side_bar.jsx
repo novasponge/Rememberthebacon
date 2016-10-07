@@ -32,7 +32,9 @@ class AppSide extends React.Component {
     super(props);
     this.state = {
       listFormOpen: false,
-      listsAnimation: 'lists-index-container group'
+      listsAnimation: 'lists-index-container group',
+      formType: "create-list",
+      listId: ""
     };
     this.closeModal = this.closeModal.bind(this);
     this.handleAddList = this.handleAddList.bind(this);
@@ -48,11 +50,14 @@ class AppSide extends React.Component {
   handleAddList(e) {
     e.stopPropagation();
     this.setState({listFormOpen: true});
+    this.setState({formType: "create-list"});
   }
 
-  handleEditList(e) {
+  handleEditList(id, e) {
     e.stopPropagation();
     this.setState({listFormOpen: true});
+    this.setState({formType: "edit-list"});
+    this.setState({listId: id});
   }
 
   handleListsAnimation() {
@@ -73,14 +78,14 @@ class AppSide extends React.Component {
           <h2 className="lists-index-container-title">
             Lists<i className="fa fa-plus-square-o add-list-button" onClick={this.handleAddList} aria-hidden="true"></i>
           </h2>
-          <ListIndex handleEditList={this.handleEditList} closeModal={this.closeModal}/>
+          <ListIndex handleEditList={this.handleEditList}/>
         </div>
         <Modal className="add-list-modal"
           isOpen={this.state.listFormOpen}
           onRequestClose={this.closeModal}
           style={modalStyle}
         >
-          <ListForm closeModal={this.closeModal}/>
+          <ListForm closeModal={this.closeModal} formType={this.state.formType} listId={this.state.listId}/>
           <button className='cancel-add list-form-button' onClick={this.closeModal}>Cancel</button>
         </Modal>
       </div>
