@@ -16,7 +16,7 @@
   background: #0060bf;
   top: 0;
   bottom: 0;
-  position: absolute;
+  position: fixed;
 }
 
 .session-side-logo {
@@ -46,7 +46,6 @@
 .session-container {
   width: 420px;
   margin-left: 33px;
-  margin-bottom: 520px;
 }
 
 .session-buttom {

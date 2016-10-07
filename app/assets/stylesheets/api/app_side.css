@@ -18,7 +18,7 @@
   text-align: left;
   padding: 5px 0 5px 0;
   display: block;
-  z-index: 1;
+  transition: all 0.3s;
 }
 
 .lists-index-container-title:hover {
@@ -44,15 +44,19 @@
 .lists-index-clicked .lists-index>li{
   opacity: 0;
   height: 0;
-  margin-top: -15px;
 }
 
 .lists-index > li {
   display: block;
   opacity: 1;
-  height: 22px;
-  margin-top: 0;
+  height: 25px;
   overflow-x: hidden;
   overflow-y: hidden;
-  transition: all 0.2s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: all 0.3s;
+}
+
+.lists-index > li:hover {
+  background-color: rgb(191, 215, 239);
 }

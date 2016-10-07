@@ -37,7 +37,7 @@ class AppSide extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleAddList = this.handleAddList.bind(this);
     this.handleListsAnimation = this.handleListsAnimation.bind(this);
-
+    this.handleEditList = this.handleEditList.bind(this);
   }
 
 
@@ -46,6 +46,12 @@ class AppSide extends React.Component {
   }
 
   handleAddList(e) {
+    e.stopPropagation();
+    this.setState({listFormOpen: true});
+  }
+
+  handleEditList(e) {
+    e.stopPropagation();
     this.setState({listFormOpen: true});
   }
 
@@ -67,7 +73,7 @@ class AppSide extends React.Component {
           <h2 className="lists-index-container-title">
             Lists<i className="fa fa-plus-square-o add-list-button" onClick={this.handleAddList} aria-hidden="true"></i>
           </h2>
-          <ListIndex />
+          <ListIndex handleEditList={this.handleEditList} closeModal={this.closeModal}/>
         </div>
         <Modal className="add-list-modal"
           isOpen={this.state.listFormOpen}

@@ -35,3 +35,12 @@ export const createListReq = (list, success, error) => {
     error
   });
 };
+
+export const destroyListReq = (id, success, error) => {
+  $.ajax({
+    method: "DELETE",
+    url: `api/lists/${id}`,
+    success,
+    error
+  });
+};

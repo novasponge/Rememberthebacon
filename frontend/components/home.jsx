@@ -13,7 +13,7 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="home-body">
         <header className="header">
           <nav className="header-nav group">
             <a href="/" className='header-logo'>

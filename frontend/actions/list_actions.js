@@ -42,7 +42,7 @@ export const destroyList = (id) => ({
   id
 });
 
-export const remove_list = (id) => ({
+export const removeList = (id) => ({
   type: REMOVE_LIST,
   id
 });

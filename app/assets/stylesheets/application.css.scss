@@ -38,7 +38,7 @@ button, article, footer {
 body {
   font-family: 'Varela Round', sans-serif,
   Arial, Helvetica;
-  font-weight: 16px;
+  font-size: 16px;
   line-height: 1.42857143;
   color: #333333;
   background-color: #fff;
@@ -58,4 +58,13 @@ img {
   display: block;
   content: "";
   clear: both;
+}
+
+.home-body {
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0060bf;
 }

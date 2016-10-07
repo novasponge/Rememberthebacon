@@ -35,3 +35,13 @@
 .list-form label {
   font-size: 13px;
 }
+
+.list-delete-button {
+  float: right;
+  padding-right: 5px;
+  color: #98AFC7;
+}
+
+.list-delete-button:hover{
+  color: #0060bf;
+}

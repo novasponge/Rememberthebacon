@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { fetchAllLists } from '../../../actions/list_actions';
+import { fetchAllLists, destroyList } from '../../../actions/list_actions';
 
 class ListIndex extends React.Component{
 
@@ -9,8 +9,33 @@ class ListIndex extends React.Component{
     this.props.fetchAllLists();
   }
 
+  handleRemoveClick(id, e) {
+    e.stopPropagation();
+    this.props.destroyList(id);
+  }
+
+  handleEditClick(id, e) {
+    e.stopPropagation();
+  }
+
+  handleListShow(e) {
+    e.stopPropagation();
+  }
+
   render() {
-    const AllLists = this.props.lists.map(list => <li key={list.id}>{list.name}</li>);
+    const AllLists = this.props.lists.map(list =>
+      <li key={list.id} onClick={this.handleListShow.bind(this)}>
+        {list.name}
+          <i className="fa fa-minus-square-o list-delete-button"
+            aria-hidden="true"
+            onClick={this.handleRemoveClick.bind(this, list.id)}>
+          </i>
+          <i className="fa fa-pencil-square-o"
+            aria-hidden="true"
+            onClick={this.handleListShow.bind(this, this.id)}>
+          </i>
+      </li>);
+
     return(
       <ul className="lists-index">
         {AllLists}
@@ -27,7 +52,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchAllLists: () => dispatch(fetchAllLists())
+    fetchAllLists: () => dispatch(fetchAllLists()),
+    destroyList: (id) => dispatch(destroyList(id))
   };
 }
 
