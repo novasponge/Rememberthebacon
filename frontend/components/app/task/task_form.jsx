@@ -16,6 +16,7 @@ class TaskForm extends React.Component {
     e.preventDefault();
     const newTask = Object.assign(this.state, {list_id: this.props.listDetail.id});
     this.props.createTask(this.props.listDetail.id, newTask);
+    this.setState({name: ""});
   }
 
   handleTaskNameInput(e) {

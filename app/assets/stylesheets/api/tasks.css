@@ -1,0 +1,17 @@
+.completed-button-container {
+  padding-top: 23px;
+  width: 200px;
+  height: 49px;
+  margin-bottom: 1px;
+  display: block;
+  float: right;
+}
+
+
+.task-options-container {
+  display: block;
+  height: 49px;
+  width: 100%;
+  padding-left: 13px;
+  padding-right: 13px;
+}

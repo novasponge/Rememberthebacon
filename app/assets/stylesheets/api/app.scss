@@ -12,6 +12,7 @@
 }
 
 .app-body {
+  flex-direction: column;
   width: 100%;
   background-color: #d9e7f5;
   position: fixed;
@@ -22,7 +23,9 @@
 .app-side-bar {
   float: left;
   height: 100%;
-  width: 180px;
+  width: 210px;
+  position: fixed;
+  height: 100%;
 }
 
 .app-side-logo {

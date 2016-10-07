@@ -48,12 +48,15 @@
 
 .list-show-container {
   position: fixed;
-  left: 180px;
+  left: 210px;
   top: 42px;
-  width: 490px;
+  width: 40%;
   bottom: 0;
   background-color: #fff;
   border: 1px solid #ccc;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
 }
+
+.list-show-container

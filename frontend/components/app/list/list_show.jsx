@@ -7,7 +7,9 @@ class ListShow extends React.Component {
 
   render(){
     return(
-      <div className='list-show-container' >
+      <div className='list-show-container group' >
+        <div className="completed-button-container" />
+        <div className='task-options-container' />
         <TaskForm listDetail={this.props.listDetail} />
         <TaskIndex listDetail={this.props.listDetail} />
       </div>
