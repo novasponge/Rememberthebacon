@@ -26,8 +26,9 @@ class TaskForm extends React.Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <input className='task-name' type="text" value={this.state.name}
-          onChange={this.handleTaskNameInput} placeholder="Add a task..."/>
-        <button className='add-task'>Add Task</button>
+          onChange={this.handleTaskNameInput} placeholder="Add a task..."
+          disabled={!this.props.listDetail} />
+        <button className='add-task' disabled={!this.state.name}>Add Task</button>
       </form>
     );
   }

@@ -1,7 +1,7 @@
 export const FETCH_ALL_LISTS = "FETCH_ALL_LISTS";
 export const FETCH_ONE_LIST = "FETCH_ONE_LIST";
 export const RECEIVE_ALL_LISTS = "RECEIVE_ALL_LISTS";
-export const RECEVIE_ONE_LIST = "RECEIVE_ONE_LIST";
+export const RECEIVE_ONE_LIST = "RECEIVE_ONE_LIST";
 export const UPDATE_LIST = 'UPDATE_LIST';
 export const CREATE_LIST = 'CREATE_LIST';
 export const DESTROY_LIST = 'DESTROY_LIST';
@@ -23,7 +23,7 @@ export const receiveAllLists = (lists) => ({
 });
 
 export const receiveOneList = (list) => ({
-  type: RECEVIE_ONE_LIST,
+  type: RECEIVE_ONE_LIST,
   list
 });
 

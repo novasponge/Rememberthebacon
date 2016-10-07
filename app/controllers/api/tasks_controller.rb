@@ -1,6 +1,6 @@
 class Api::TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = List.find(params[:list_id]).tasks
   end
 
   def show

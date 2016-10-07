@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import { fetchAllTasks, destroyTask } from '../../../actions/task_actions';
+import { receiveAllTasks, destroyTask } from '../../../actions/task_actions';
 
 class TaskIndex extends React.Component{
 
   // componentDidMount() {
   //   debugger
-  //   this.props.fetchAllTasks(this.props.listDetail.id);
+  //   this.props.receiveAllTasks(this.props.listDetail.id);
   // }
   //
   // handleRemoveClick(id, e) {
@@ -37,11 +37,11 @@ function mapStateToProps(state) {
   };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     fetchAllTasks: (listId) => dispatch(fetchAllTasks(listId)),
-//     destroyTask: (id) => dispatch(destroyTask(id)),
-//   };
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    receiveAllTasks: (listId) => dispatch(receiveAllTasks(listId)),
+    destroyTask: (id) => dispatch(destroyTask(id)),
+  };
+}
 
 export default connect(mapStateToProps)(TaskIndex);
