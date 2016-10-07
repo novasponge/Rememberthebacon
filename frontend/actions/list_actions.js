@@ -6,6 +6,7 @@ export const UPDATE_LIST = 'UPDATE_LIST';
 export const CREATE_LIST = 'CREATE_LIST';
 export const DESTROY_LIST = 'DESTROY_LIST';
 export const REMOVE_LIST = 'REMOVE_LIST';
+export const RECEIVE_LIST_DETAIL = 'RECEIVE_LIST_DETAIL';
 
 export const fetchAllLists = () => ({
   type: FETCH_ALL_LISTS,
@@ -45,4 +46,9 @@ export const destroyList = (id) => ({
 export const removeList = (id) => ({
   type: REMOVE_LIST,
   id
+});
+
+export const receiveListDetail = (list) => ({
+  type: RECEIVE_LIST_DETAIL,
+  list
 });

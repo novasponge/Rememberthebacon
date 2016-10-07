@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { fetchAllLists, destroyList } from '../../../actions/list_actions';
+import { fetchAllLists, destroyList, receiveListDetail} from '../../../actions/list_actions';
+import { fetchAllTasks } from '../../../actions/task_actions';
+
 
 class ListIndex extends React.Component{
-
 
   componentDidMount() {
     this.props.fetchAllLists();
@@ -14,13 +15,15 @@ class ListIndex extends React.Component{
     this.props.destroyList(id);
   }
 
-  handleListShow(e) {
+  handleListShow(list, e) {
     e.stopPropagation();
+    this.props.receiveListDetail(list);
+    this.props.fetchAllTasks(list.id);
   }
 
   render() {
     const AllLists = this.props.lists.map(list =>
-      <li key={list.id} onClick={this.handleListShow.bind(this)}>
+      <li key={list.id} onClick={this.handleListShow.bind(this, list)}>
         {list.name}
           <i className="fa fa-minus-square-o list-buttons"
             aria-hidden="true"
@@ -30,12 +33,15 @@ class ListIndex extends React.Component{
             aria-hidden="true"
             onClick={this.props.handleEditList.bind(null, list.id)}>
           </i>
+
       </li>);
 
     return(
-      <ul className="lists-index">
-        {AllLists}
-      </ul>
+      <div>
+        <ul className="lists-index">
+          {AllLists}
+        </ul>
+      </div>
     );
   }
 }
@@ -49,7 +55,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     fetchAllLists: () => dispatch(fetchAllLists()),
-    destroyList: (id) => dispatch(destroyList(id))
+    destroyList: (id) => dispatch(destroyList(id)),
+    receiveListDetail: (list) => dispatch(receiveListDetail(list)),
+    fetchAllTasks: (listId) => dispatch(fetchAllTasks(listId))
   };
 }
 

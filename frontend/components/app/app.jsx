@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import AppHeader from './app_header';
 import AppSide from './app_side_bar';
-import ListShow from './list_show.jsx';
+import AppListShow from './list/list_show';
 
 class App extends React.Component {
 
@@ -19,7 +19,7 @@ class App extends React.Component {
           <AppHeader />
           <div className="Content group">
             <AppSide />
-            <ListShow />
+            <AppListShow />
           </div>
         </div>
       );

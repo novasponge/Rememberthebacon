@@ -1,16 +1,16 @@
-export const fetchTasks = (success, error) => {
+export const fetchTasks = (listId, success, error) => {
   $.ajax({
     method: "GET",
-    url: "api/tasks",
+    url: `api/lists/${listId}/tasks`,
     success,
     error
   });
 };
 
-export const fetchTask = (id, success, error) => {
+export const fetchTask = (listId, taskId, success, error) => {
   $.ajax({
     method: "GET",
-    url: `api/tasks/${id}`,
+    url: `api/lists/${listId}/tasks/${taskId}`,
     success,
     error
   });
@@ -26,10 +26,10 @@ export const updateTaskReq = (id, task, success, error) => {
   });
 };
 
-export const createTaskReq = (task, success, error) => {
+export const createTaskReq = (listId, task, success, error) => {
   $.ajax({
     method: "POST",
-    url: 'api/tasks',
+    url: `api/lists/${listId}/tasks`,
     data: {task},
     success,
     error

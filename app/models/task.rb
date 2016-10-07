@@ -14,7 +14,7 @@
 #
 
 class Task < ApplicationRecord
-  # validates :list, presence: true
+  validates :list, :name, presence: true
 
   belongs_to :list
 end

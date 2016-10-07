@@ -7,8 +7,9 @@ export const CREATE_TASK = 'CREATE_TASK';
 export const DESTROY_TASK = 'DESTROY_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 
-export const fetchAllTasks = () => ({
+export const fetchAllTasks = (listId) => ({
   type: FETCH_ALL_TASKS,
+  listId
 });
 
 export const fetchOneTask = (id) => ({
@@ -32,8 +33,9 @@ export const updateTask = (id, task) => ({
   task
 });
 
-export const createTask = (task) => ({
+export const createTask = (listId, task) => ({
   type: CREATE_TASK,
+  listId,
   task
 });
 

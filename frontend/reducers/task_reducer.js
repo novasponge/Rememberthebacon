@@ -2,9 +2,9 @@ import { RECEIVE_ALL_TASKS, RECEVIE_ONE_TASK, REMOVE_TASK} from "../actions/task
 import { merge } from 'lodash';
 
 const TaskReducer = (state = {}, action) => {
-  switch (aciton.type) {
+  switch (action.type) {
     case RECEIVE_ALL_TASKS:
-      return actions.tasks;
+      return action.tasks;
     case RECEVIE_ONE_TASK:
       const newTask = {[action.task.id]: action.task};
       return merge({}, state, newTask);
