@@ -20,7 +20,6 @@
   border-bottom: 1px dotted #ccc;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-  z-index: 2;
 }
 
 .task-form-hidden {
@@ -29,7 +28,6 @@
   padding-bottom: 10px;
   border-bottom: 1px dotted #ccc;
   transition: all 0.2s ease-in-out;
-  z-index: 2;
 }
 
 .task-form-hidden .add-task {

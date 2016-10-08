@@ -8,10 +8,23 @@
   bottom: 39px;
   right: 130px;
 }
+
 .lists-index-container {
-  padding: 5px 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   position: relative;
   display: block;
+  max-height: 300px;
+  overflow: hidden;
+  transition: all 0.45s ease-in;
+  border-bottom: 1px dotted #000;
+}
+
+.lists-index-clicked {
+  max-height: 37px;
+  transition: all 0.35s ease-out;
 }
 
 .lists-index-container-title {
@@ -41,10 +54,6 @@
   display: block;
 }
 
-.lists-index-clicked .lists-index>li{
-  opacity: 0;
-  height: 0;
-}
 
 .lists-index > li {
   display: block;
