@@ -17,7 +17,7 @@ class App extends React.Component {
       return(
         <div className="app-body">
           <AppHeader />
-          <div className="Content group">
+          <div className="content group">
             <AppSide />
             <AppListShow />
           </div>
