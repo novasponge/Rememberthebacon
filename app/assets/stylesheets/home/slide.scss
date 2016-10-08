@@ -41,6 +41,7 @@
 }
 
 .cloud {
+  font-size: 22px;
   padding:55px 16px 0 20px;
   line-height: 1.3;
   color: #000;
@@ -53,50 +54,82 @@
   background-image: asset-url('hp_cloud.png');
 }
 
-.slide-1-cloud-left {
-}
-
-.slide {
+.slide-1 {
   height: 560px;
   width: 100%;
 }
+.slide-1-cloud-left {
+  margin-right: 82px;
+  margin-top: 7px;
+}
 
+.slide-1-cloud-right {
+  margin-left: 82px;
+  margin-top: 7px;
+}
+
+.slide-1-cloud {
+  text-align: center;
+}
+
+.slide-2-text-box {
+  display: flex;
+  margin-top: 46px;
+  justify-content: center;
+}
+
+.text {
+  padding: 6px 13px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+  color: #444;
+  font-size: 18px;
+  line-height: 1.2;
+  width: 281px;
+  height: 36px;
+}
+
+.slide-2-text-left {
+  margin-right: 108px;
+}
+
+.slide-2-text-right {
+  margin-top: 25px;
+  margin-left: 108px;
+}
 .slide-4-image {
-  margin: 0 auto;
   height: 477px;
   width: 433px;
-  margin-top: 15px;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  margin-top: 25px;
   background-image: asset-url('hp_steve_4.png');
 }
 
 .slide-3-image {
-  margin: 0 auto;
-  height: 350px;
-  width: 306px;
+  height: 306px;
+  width: 350px;;
   margin-top: 15px;
-  background-repeat: no-repeat;
-  background-size: 100%;
   background-image: asset-url('hp_steve_3.png');
 }
 
 .slide-2-image {
-  margin: 0 auto;
-  height: 430px;
-  width: 307px;
+  height: 307px;
+  width: 430px;
   margin-top: 15px;
-  background-repeat: no-repeat;
-  background-size: 100%;
   background-image: asset-url('hp_steve_2.png');
 }
 
 .slide-1-image {
-  margin: 0 auto;
   height: 306px;
   width: 261px;
+  margin-top: -40px;
+  background-image: asset-url('hp_steve_1.png');
+}
+
+
+.slide-image {
+  margin: 0 auto;
   margin-top: 15px;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-image: asset-url('hp_steve_1.png');
 }

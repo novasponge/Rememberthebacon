@@ -66,5 +66,24 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.color-1 {
   background-color: #0060bf;
+  transition: background-color 0.3s linear;
+}
+
+.color-2 {
+  background-color: #3292f2;
+  transition: background-color 0.3s linear;
+}
+
+.color-3 {
+  background-color: #6a4ca6;
+  transition: background-color 0.3s linear;
+}
+
+.color-4 {
+  background-color: #5bb84d;
+  transition: background-color 0.3s linear;
 }

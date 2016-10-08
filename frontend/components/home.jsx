@@ -5,6 +5,13 @@ import { connect } from 'react-redux';
 import Carousel from 'nuka-carousel';
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      homeBodyBackgroundColor: "home-body color-1"
+    };
+    this.handleSlide = this.handleSlide.bind(this);
+  }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.loggedIn){
@@ -12,9 +19,28 @@ class Home extends React.Component {
     }
   }
 
+  handleSlide(){
+    switch (this.state.homeBodyBackgroundColor) {
+      case "home-body color-1":
+        this.setState({homeBodyBackgroundColor: "home-body color-2" });
+        break;
+      case "home-body color-2":
+        this.setState({homeBodyBackgroundColor: "home-body color-3" });
+        break;
+      case "home-body color-3":
+        this.setState({homeBodyBackgroundColor: "home-body color-4" });
+        break;
+      case "home-body color-4":
+        this.setState({homeBodyBackgroundColor: "home-body color-1" });
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     return(
-      <div className="home-body">
+      <div className={this.state.homeBodyBackgroundColor}>
         <header className="header">
           <nav className="header-nav group">
             <a href="/" className='header-logo'>
@@ -23,24 +49,39 @@ class Home extends React.Component {
             <GreetingContainer />
           </nav>
         </header>
-        <Carousel easing='easeInOutCirc' heightMode='max' autoplay={true} wrapAround={true}>
-          <div className='slide-1 slide'>
-            <div className='slide-1-cloud'>
-              <div className='slide-1-cloud-left cloud'></div>
-              <div className='slide-2-cloud-right cloud'></div>
+        <div className='home-page-main'>
+          <div className="Sign-up-container">Simple, light, and easy to use.</div>
+          <Carousel easing='easeInOutCirc'
+                    heightMode='max'
+                    autoplay={true}
+                    wrapAround={true}
+                    afterSlide={this.handleSlide}>
+            <div className='slide-1'>
+              <div className='slide-1-cloud'>
+                <div className='slide-1-cloud-left cloud'>Call Jared at 4PM</div>
+                <div className='slide-1-cloud-right cloud'>Cook the bacon</div>
+              </div>
+              <div className='slide-1-image slide-image'></div>
             </div>
-            <div className='slide-1-image'></div>
-          </div>
-          <div className='slide-2 slide'>
-            <div className='slide-2-image'></div>
-          </div>
-          <div className='slide-3 slide'>
-            <div className='slide-3-image'></div>
-          </div>
-          <div className='slide-4 slide'>
-            <div className='slide-4-image'></div>
-          </div>
-        </Carousel>
+            <div className='slide-2'>
+              <div className='slide-2-text-box'>
+                <div className='slide-2-text-left text'>Cook the bacon Friday</div>
+                <div className='slide-2-text-right text'>Call Jared at 4PM tomorrow</div>
+              </div>
+              <div className='slide-2-image slide-image'></div>
+            </div>
+            <div className='slide-3'>
+              <div className='slide-2-text-box'>
+                <div className='slide-2-text-left text'>Go buy bacon tomorrow</div>
+                <div className='slide-2-text-right text'>Call Jared on Friday</div>
+              </div>
+              <div className='slide-3-image slide-image'></div>
+            </div>
+            <div className='slide-4'>
+              <div className='slide-4-image slide-image'></div>
+            </div>
+          </Carousel>
+        </div>
       </div>
     );
   }

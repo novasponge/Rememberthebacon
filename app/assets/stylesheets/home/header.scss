@@ -1,7 +1,9 @@
 .header {
+  width: 100%;
+  position: fixed;
   display: block;
-  background: #5bb84d;
   border-bottom: 1px solid #aaa;
+  overflow: hidden;
 }
 
 .header-nav {
@@ -54,4 +56,8 @@
 .signup-link {
   border: 2px solid #fff;
   border-radius: 5px;
+}
+
+.home-page-main {
+  margin-top: 179px;
 }
