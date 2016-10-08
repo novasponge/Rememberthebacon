@@ -7,7 +7,9 @@ class TaskIndex extends React.Component{
   render() {
     const AllTasks = this.props.tasks.map(task =>
       <li key={task.id}>
-        {task.name}
+        <div className="task-item-container">
+          {task.name}
+        </div>
       </li>);
 
     return(

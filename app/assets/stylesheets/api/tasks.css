@@ -40,7 +40,7 @@
   margin-left: 2%;
   margin-right: 2%;
   padding: 5px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #0060bf;
   border-radius: 4px;
 }
 
@@ -61,4 +61,19 @@
 
 .add-task:disabled {
   opacity: 0.5;
+}
+
+.task-index li {
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.task-index li:first-child{
+  margin-top: 10px;
+}
+
+.task-item-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 13px;
 }
