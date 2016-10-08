@@ -1,17 +1,66 @@
 .completed-button-container {
   padding-top: 23px;
-  width: 200px;
+  width: 100%;
   height: 49px;
   margin-bottom: 1px;
-  display: block;
-  float: right;
 }
 
 
 .task-options-container {
-  display: block;
   height: 49px;
   width: 100%;
   padding-left: 13px;
   padding-right: 13px;
+}
+
+.task-form {
+  height: 108px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.task-form-hidden {
+  height: 54px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ccc;
+  transition: all 0.4s ease-in-out;
+  z-index: 2;
+}
+
+.task-form-hidden .add-task {
+  display: none;
+}
+
+.task-name {
+  margin: 0 auto;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.task-name:disabled {
+  opacity: 0.5;
+}
+
+.add-task {
+  margin-top: 15px;
+  margin-left: 70%;
+  padding: 7px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #0060bf;
+  color: #fff;
+  font-weight: bold;
+}
+
+.add-task:disabled {
+  opacity: 0.5;
 }

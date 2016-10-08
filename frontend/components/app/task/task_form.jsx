@@ -1,4 +1,5 @@
 import React from 'react';
+import ClickOutside from 'react-clickoutside-component';
 import {connect} from 'react-redux';
 import { createTask } from '../../../actions/task_actions';
 
@@ -6,10 +7,13 @@ class TaskForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "",
+      formState: "task-form-hidden"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTaskNameInput = this.handleTaskNameInput.bind(this);
+    this.handleOutSideClick = this.handleOutSideClick.bind(this);
+    this.handleFormClick = this.handleFormClick.bind(this);
   }
 
   handleSubmit(e) {
@@ -23,14 +27,25 @@ class TaskForm extends React.Component {
     this.setState({name: e.target.value});
   }
 
+  handleOutSideClick(e) {
+    this.setState({formState: "task-form-hidden"});
+  }
+
+  handleFormClick(e) {
+    this.setState({formState: "task-form"});
+  }
+
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input className='task-name' type="text" value={this.state.name}
-          onChange={this.handleTaskNameInput} placeholder="Add a task..."
-          disabled={!this.props.listDetail} />
-        <button className='add-task' disabled={!this.state.name}>Add Task</button>
-      </form>
+      <ClickOutside onClickOutside={this.handleOutSideClick}>
+        <form className={this.state.formState} onSubmit={this.handleSubmit}
+          onClick={this.handleFormClick}>
+          <input className='task-name' type="text" value={this.state.name}
+            onChange={this.handleTaskNameInput} placeholder="Add a task..."
+            disabled={!this.props.listDetail} />
+          <button className='add-task' disabled={!this.state.name}>Add Task</button>
+        </form>
+      </ClickOutside>
     );
   }
 }
