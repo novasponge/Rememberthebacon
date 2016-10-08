@@ -56,29 +56,37 @@ class Home extends React.Component {
                     autoplay={true}
                     wrapAround={true}
                     afterSlide={this.handleSlide}>
-            <div className='slide-1'>
+            <div className='slide-1 slide'>
               <div className='slide-1-cloud'>
                 <div className='slide-1-cloud-left cloud'>Call Jared at 4PM</div>
                 <div className='slide-1-cloud-right cloud'>Cook the bacon</div>
               </div>
               <div className='slide-1-image slide-image'></div>
+              <div className="slide-foot-top">Get to-dos out of your head.</div>
+              <div className="slide-foot-bottom">Stop thinking about your to-dos, and let the app remmeber for you</div>
             </div>
-            <div className='slide-2'>
+            <div className='slide-2 slide'>
               <div className='slide-2-text-box'>
                 <div className='slide-2-text-left text'>Cook the bacon Friday</div>
                 <div className='slide-2-text-right text'>Call Jared at 4PM tomorrow</div>
               </div>
               <div className='slide-2-image slide-image'></div>
+                <div className="slide-foot-top">Get reminded, anywhere.</div>
+                <div className="slide-foot-bottom">You'll never forget the bacon(or anything else) again.</div>
             </div>
-            <div className='slide-3'>
+            <div className='slide-3 slide'>
               <div className='slide-2-text-box'>
                 <div className='slide-2-text-left text'>Go buy bacon tomorrow</div>
                 <div className='slide-2-text-right text'>Call Jared on Friday</div>
               </div>
               <div className='slide-3-image slide-image'></div>
+                <div className="slide-foot-top">Get things done, together.</div>
+                <div className="slide-foot-bottom">Share your lists and give tasks to others to get things done faster.</div>
             </div>
-            <div className='slide-4'>
+            <div className='slide-4 slide'>
               <div className='slide-4-image slide-image'></div>
+                <div className="slide-foot-top">Everywhere you go.</div>
+                <div className="slide-foot-bottom">Remember The Bacon is magically in sync on all your devices</div>
             </div>
           </Carousel>
         </div>

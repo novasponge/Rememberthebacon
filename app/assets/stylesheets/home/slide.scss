@@ -98,38 +98,53 @@
   margin-top: 25px;
   margin-left: 108px;
 }
+
 .slide-4-image {
-  height: 477px;
+  height: 377px;
   width: 433px;
-  margin-top: 25px;
+  margin: 0 auto;
   background-image: asset-url('hp_steve_4.png');
 }
 
 .slide-3-image {
   height: 306px;
   width: 350px;;
-  margin-top: 15px;
+  margin: 0 auto;
   background-image: asset-url('hp_steve_3.png');
 }
 
 .slide-2-image {
   height: 307px;
   width: 430px;
-  margin-top: 15px;
+  margin: 0 auto;
   background-image: asset-url('hp_steve_2.png');
 }
 
 .slide-1-image {
   height: 306px;
   width: 261px;
-  margin-top: -40px;
+  margin: -40px auto;
   background-image: asset-url('hp_steve_1.png');
 }
 
 
 .slide-image {
-  margin: 0 auto;
-  margin-top: 15px;
   background-repeat: no-repeat;
   background-size: 100%;
+}
+
+.slide-foot-top {
+  height: 30px;
+  margin: 33px 20px 8px 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30.8px;
+  padding-top: 10px; 
+}
+
+.slide-foot-bottom {
+  height: 52px;
+  margin-bottom: 5px;
+  text-align: center;
 }
