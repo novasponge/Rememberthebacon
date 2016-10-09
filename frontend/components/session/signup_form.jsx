@@ -83,8 +83,10 @@ class SignupForm extends React.Component {
           <a href="/" className='session-side-logo'>
             <h1 className="session-side-logo-name">Remember the bacon</h1>
           </a>
-          <div className="signup-text">"It's 106 miles to Chicago, we've got a full tank of gas, half a pack of cigarettes, it's dark and we're wearing sunglasses"</div>
-          <div className="signup-text-ref">--Blues Brothers</div>
+          <div className="signup-text-container">
+            <div className="signup-text">"It's 106 miles to Chicago, we've got a full tank of gas, half a pack of cigarettes, it's dark and we're wearing sunglasses"</div>
+            <div className="signup-text-ref">--Blues Brothers</div>
+          </div>
         </div>
         <section className="session-section">
           <div className="session-container group">

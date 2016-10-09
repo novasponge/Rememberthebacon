@@ -1,11 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-//
-// class Component {
-//   constuctor(props) {
-//     this.props = props;
-//   }
-// }
 
 class LoginForm extends React.Component {
   constructor(props){
@@ -46,9 +40,11 @@ class LoginForm extends React.Component {
           <a href="/" className='session-side-logo'>
             <h1 className="session-side-logo-name">Remember the bacon</h1>
           </a>
-          <div className="login-image login-image-1"></div>
-          <div className="login-image login-image-2"></div>
-          <div className="login-image login-image-3"></div>
+          <div className="login-images">
+            <div className="login-image login-image-1"></div>
+            <div className="login-image login-image-2"></div>
+            <div className="login-image login-image-3"></div>
+          </div>
           <div className='login-text'>"I am feeling double-plus good today." --1984</div>
         </div>
         <section className="session-section">
