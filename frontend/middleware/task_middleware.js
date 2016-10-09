@@ -13,6 +13,10 @@ const TaskMiddleware = (store) => (next) => (action) => {
       success = (data) => store.dispatch(ACTIONS.receiveOneTask(data));
       UTILS.createTaskReq(action.listId, action.task, success, error);
       return next(action);
+    case ACTIONS.UPDATE_TASK:
+      success = (data) => store.dispatch(ACTIONS.receiveOneTask(data));
+      UTILS.updateTaskReq(action.id, action.task, success, error);
+      return next(action);
     default:
       return next(action);
   }

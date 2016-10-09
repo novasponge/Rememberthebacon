@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import AppHeader from './app_header';
 import AppSide from './app_side_bar';
 import AppListShow from './list/list_show';
+import AppTaskShow from './task/task_show';
 
 class App extends React.Component {
 
@@ -20,6 +21,7 @@ class App extends React.Component {
           <div className="content group">
             <AppSide />
             <AppListShow />
+            <AppTaskShow />
           </div>
         </div>
       );

@@ -1,12 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { receiveAllTasks, destroyTask } from '../../../actions/task_actions';
+import { receiveAllTasks, destroyTask, receiveTaskDetail } from '../../../actions/task_actions';
 
 class TaskIndex extends React.Component{
 
+  handleTaskShow(task, e) {
+    this.props.receiveTaskDetail(task);
+  }
+
   render() {
     const AllTasks = this.props.tasks.map(task =>
-      <li key={task.id}>
+      <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
         <div className="task-item-container">
           {task.name}
         </div>
@@ -30,9 +34,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    receiveAllTasks: (listId) => dispatch(receiveAllTasks(listId)),
-    destroyTask: (id) => dispatch(destroyTask(id)),
+    receiveTaskDetail: (task) => dispatch(receiveTaskDetail(task))
   };
 }
 
-export default connect(mapStateToProps)(TaskIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(TaskIndex);
