@@ -4,6 +4,8 @@
   display: block;
   border-bottom: 1px solid #aaa;
   overflow: hidden;
+  background-color: inherit;
+  z-index: 1;
 }
 
 .header-nav {
@@ -68,5 +70,6 @@
 }
 
 .home-page-main {
-  margin-top: 135px;
+  margin-top: 115px;
+  overflow: hidden;
 }

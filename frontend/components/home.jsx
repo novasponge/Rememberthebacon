@@ -90,6 +90,7 @@ class Home extends React.Component {
             </div>
           </Carousel>
         </div>
+        <footer className="home-page-footer"></footer>
       </div>
     );
   }
