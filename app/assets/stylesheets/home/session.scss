@@ -111,7 +111,11 @@
 }
 
 .form-session:hover {
-  -webkit-filter: brightness(90%);
+  background-color: #006db2;
+}
+
+.form-session:active {
+  background-color: #14486b;
 }
 
 .email-error, .password-error, .user-error {
