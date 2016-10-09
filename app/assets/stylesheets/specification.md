@@ -4,6 +4,9 @@ nav default color:
   #6a4ca6;
   #5bb84d;
 
+bottom:
+  #009dff;
+
   // let emailError;
   // let passwordError;
   //  this.props.errors.forEach(error => {

@@ -59,6 +59,11 @@
   background-color: rgba(0,96,191,0.1);
   border-radius: 3px;
   border: transparent;
+  -webkit-filter: brightness(50%);
+}
+
+.session-buttom:hover {
+  -webkit-filter: brightness(100%);
 }
 
 .session-form-container {
@@ -78,6 +83,11 @@
   margin-bottom: 10px;
 }
 
+.session-username:focus, .signup-email:focus,
+.session-password:focus, .session-text:focus {
+  box-shadow: 0 0 5px #ccc;
+  border: 1px solid #009dff;
+}
 .session-text {
   margin-bottom: 28px;
   margin-top: 20px;
@@ -100,7 +110,12 @@
   color: #fff;
 }
 
+.form-session:hover {
+  -webkit-filter: brightness(90%);
+}
+
 .email-error, .password-error, .user-error {
   padding-left: 15px;
   padding-bottom: 5px;
+  color: #ea5400;
 }
