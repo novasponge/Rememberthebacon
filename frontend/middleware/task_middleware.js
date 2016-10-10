@@ -1,6 +1,7 @@
 import * as ACTIONS from '../actions/task_actions';
 import { fetchAllLists } from '../actions/list_actions';
 import * as UTILS from '../util/task_api_util';
+import { fetchListTasks } from '../actions/task_actions';
 
 const TaskMiddleware = (store) => (next) => (action) => {
   let success;
@@ -22,7 +23,17 @@ const TaskMiddleware = (store) => (next) => (action) => {
       UTILS.createTaskReq(action.listId, action.task, success, error);
       return next(action);
     case ACTIONS.UPDATE_TASK:
-      success = (data) => store.dispatch(ACTIONS.receiveOneTask(data));
+      if (action.oldListId === action.task.list_id) {
+        success = (data) => {
+          store.dispatch(ACTIONS.receiveOneTask(data));
+        };
+      } else {
+        success = (data) => {
+          store.dispatch(fetchAllLists());
+          store.dispatch(fetchListTasks(action.oldListId));
+          store.dispatch(ACTIONS.receiveOneTask(data));
+        };
+      }
       UTILS.updateTaskReq(action.id, action.task, success, error);
       return next(action);
     default:

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateTask } from '../../../actions/task_actions';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import Dropdown from 'react-dropdown';
 
 require('react-datepicker/dist/react-datepicker.css');
 
@@ -15,8 +16,9 @@ class TaskUpdate extends React.Component {
       dueDate : moment(),
       priority : "",
       listId : "",
-      formState: "update-form",
       completed: "",
+      formState: "update-form",
+      oldListId: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +26,7 @@ class TaskUpdate extends React.Component {
     this.handleDueDateChange = this.handleDueDateChange.bind(this);
     this.handleStartDateChange = this.handleStartDateChange.bind(this);
     this.handleCompleted = this.handleCompleted.bind(this);
+    this._onSelect = this._onSelect.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -31,10 +34,11 @@ class TaskUpdate extends React.Component {
       this.setState({
         name: nextProps.taskDetail.name,
         startDate: nextProps.taskDetail.start_date ? moment(nextProps.taskDetail.start_date, "YYYY-MM-DD") : moment(),
-        dueDate : nextProps.taskDetail.due_date? moment(nextProps.taskDetail.due_date, "YYYY-MM-DD") : moment(),
-        priority : nextProps.taskDetail.priority,
-        listId : nextProps.taskDetail.list_id,
-        completed: nextProps.taskDetail.completed ? "completed" : "Incompleted"
+        dueDate: nextProps.taskDetail.due_date? moment(nextProps.taskDetail.due_date, "YYYY-MM-DD") : moment(),
+        priority: nextProps.taskDetail.priority,
+        listId: nextProps.taskDetail.list_id,
+        completed: nextProps.taskDetail.completed ? "completed" : "Incompleted",
+        oldListId: nextProps.taskDetail.list_id
       });
     }
   }
@@ -46,11 +50,10 @@ class TaskUpdate extends React.Component {
       start_date: this.state.startDate.format("YYYY-MM-DD"),
       due_date: this.state.dueDate.format("YYYY-MM-DD"),
       priority: this.state.priority,
-      listId: this.state.listId,
+      list_id: this.state.listId,
       completed: this.props.taskDetail.completed
     };
-
-    this.props.updateTask(this.props.taskDetail.id, newTask);
+    this.props.updateTask(this.props.taskDetail.id, newTask, this.state.oldListId);
   }
 
   handleTaskNameInput(e) {
@@ -76,7 +79,17 @@ class TaskUpdate extends React.Component {
     this.props.updateTask(this.props.taskDetail.id, newTask);
   }
 
+  _onSelect(option) {
+    this.setState({listId: option.value});
+  }
+
   render () {
+    const options = this.props.lists.map(list => {
+      return {
+        value: list.id,
+        lable: list.name
+      };
+    });
     return (
       <div>
         <form className={this.state.formState} onSubmit={this.handleSubmit}>
@@ -94,7 +107,9 @@ class TaskUpdate extends React.Component {
               onChange={this.handleDueDateChange}
             />
           </div>
-          <div>list{this.state.listId}</div>
+          <div>
+            list<Dropdown options={options} onChange={this._onSelect} />
+          </div>
           <button>Update task</button>
           <div onClick={this.handleCompleted}>complete</div>
         </form>
@@ -102,16 +117,16 @@ class TaskUpdate extends React.Component {
     );
   }
 }
+
 function mapStateToProps(state) {
   return {
-    lists: state.lists
+    lists: Object.keys(state.lists).map(id => state.lists[id])
   };
 }
 
-
 function mapDispatchToProps(dispatch) {
   return {
-    updateTask: (taskId, task) => dispatch(updateTask(taskId, task))
+    updateTask: (taskId, task, oldListId) => dispatch(updateTask(taskId, task, oldListId))
   };
 }
 

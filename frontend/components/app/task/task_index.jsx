@@ -9,7 +9,6 @@ class TaskIndex extends React.Component{
     this.props.receiveTaskDetail(task);
   }
 
-
   render() {
     const AllTasks = this.props.tasks.map(task =>
       <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
