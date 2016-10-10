@@ -1,4 +1,5 @@
 import * as ACTIONS from '../actions/task_actions';
+import { fetchAllLists } from '../actions/list_actions';
 import * as UTILS from '../util/task_api_util';
 
 const TaskMiddleware = (store) => (next) => (action) => {
@@ -14,7 +15,10 @@ const TaskMiddleware = (store) => (next) => (action) => {
       UTILS.fetchTasks(success, error);
       return next(action);
     case ACTIONS.CREATE_TASK:
-      success = (data) => store.dispatch(ACTIONS.receiveOneTask(data));
+      success = (data) => {
+        store.dispatch(ACTIONS.receiveOneTask(data));
+        store.dispatch(fetchAllLists());
+      };
       UTILS.createTaskReq(action.listId, action.task, success, error);
       return next(action);
     case ACTIONS.UPDATE_TASK:

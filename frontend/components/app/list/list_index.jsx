@@ -25,6 +25,7 @@ class ListIndex extends React.Component{
     const AllLists = this.props.lists.map(list =>
       <li key={list.id} onClick={this.handleListShow.bind(this, list)}>
         {list.name}
+          <div className='task-number'>{list.num_task}</div>
           <i className="fa fa-minus-square-o list-buttons"
             aria-hidden="true"
             onClick={this.handleRemoveClick.bind(this, list.id)}>

@@ -28,11 +28,11 @@ export const receiveOneTask = (task) => ({
   task
 });
 
-export const updateTask = (id, task) => ({
-  type: UPDATE_TASK,
+export const updateTask = (id, task) => {
+  return {type: UPDATE_TASK,
   id,
-  task
-});
+  task};
+};
 
 export const createTask = (listId, task) => ({
   type: CREATE_TASK,

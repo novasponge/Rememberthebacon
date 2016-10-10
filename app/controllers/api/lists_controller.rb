@@ -1,6 +1,6 @@
 class Api::ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = List.list_with_task_number
   end
 
   def create

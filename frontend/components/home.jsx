@@ -63,7 +63,7 @@ class Home extends React.Component {
               </div>
               <div className='slide-1-image slide-image'></div>
               <div className="slide-foot-top">Get to-dos out of your head.</div>
-              <div className="slide-foot-bottom">Stop thinking about your to-dos, and let the app remmeber for you</div>
+              <div className="slide-foot-bottom">Stop thinking about your to-dos, and let the app remember for you</div>
             </div>
             <div className='slide-2 slide'>
               <div className='slide-2-text-box'>

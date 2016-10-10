@@ -76,3 +76,8 @@
   max-height: 37px;
   transition: all 0.35s ease-out;
 }
+
+.task-number {
+  float: right;
+  background-color: #98afc7;
+}

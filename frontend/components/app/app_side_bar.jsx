@@ -52,6 +52,10 @@ class AppSide extends React.Component {
     this.setState({listFormOpen: false});
   }
 
+  componentDidMount() {
+    this.props.fetchAllTasks();
+  }
+
   handleAddList(e) {
     e.stopPropagation();
     this.setState({listFormOpen: true});
@@ -117,6 +121,11 @@ class AppSide extends React.Component {
   }
 }
 
+// function mapStateToProps(state) {
+//   return {
+//     allTasks:
+//   };
+// }
 
 function mapDispatchToProps(dispatch) {
   return {

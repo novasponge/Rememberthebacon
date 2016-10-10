@@ -17,7 +17,6 @@ class ListShow extends React.Component {
   }
 }
 
-
 function mapStateToProps(state) {
   return {
     listDetail: state.listDetail

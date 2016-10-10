@@ -1,12 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { receiveAllTasks, destroyTask, receiveTaskDetail } from '../../../actions/task_actions';
+import { fetchAllLists } from '../../../actions/list_actions';
 
 class TaskIndex extends React.Component{
 
   handleTaskShow(task, e) {
     this.props.receiveTaskDetail(task);
   }
+
 
   render() {
     const AllTasks = this.props.tasks.map(task =>
