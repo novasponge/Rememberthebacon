@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { fetchAllLists, destroyList, receiveListDetail} from '../../../actions/list_actions';
-import { fetchAllTasks } from '../../../actions/task_actions';
+import { fetchListTasks } from '../../../actions/task_actions';
 
 
 class ListIndex extends React.Component{
@@ -18,7 +18,7 @@ class ListIndex extends React.Component{
   handleListShow(list, e) {
     e.stopPropagation();
     this.props.receiveListDetail(list);
-    this.props.fetchAllTasks(list.id);
+    this.props.fetchListTasks(list.id);
   }
 
   render() {
@@ -33,12 +33,11 @@ class ListIndex extends React.Component{
             aria-hidden="true"
             onClick={this.props.handleEditList.bind(null, list.id)}>
           </i>
-
       </li>);
 
     return(
       <div>
-        <ul className="lists-index">
+        <ul >
           {AllLists}
         </ul>
       </div>
@@ -57,7 +56,7 @@ function mapDispatchToProps(dispatch) {
     fetchAllLists: () => dispatch(fetchAllLists()),
     destroyList: (id) => dispatch(destroyList(id)),
     receiveListDetail: (list) => dispatch(receiveListDetail(list)),
-    fetchAllTasks: (listId) => dispatch(fetchAllTasks(listId))
+    fetchListTasks: (listId) => dispatch(fetchListTasks(listId))
   };
 }
 

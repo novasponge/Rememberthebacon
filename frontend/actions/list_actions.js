@@ -12,11 +12,6 @@ export const fetchAllLists = () => ({
   type: FETCH_ALL_LISTS,
 });
 
-export const fetchOneList = (id) => ({
-  type: FETCH_ONE_LIST,
-  id
-});
-
 export const receiveAllLists = (lists) => ({
   type: RECEIVE_ALL_LISTS,
   lists

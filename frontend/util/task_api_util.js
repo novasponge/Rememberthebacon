@@ -1,7 +1,16 @@
-export const fetchTasks = (listId, success, error) => {
+export const fetchListTasks = (listId, success, error) => {
   $.ajax({
     method: "GET",
     url: `api/lists/${listId}/tasks`,
+    success,
+    error
+  });
+};
+
+export const fetchTasks = (success, error) => {
+  $.ajax({
+    method: "GET",
+    url: 'api/tasks',
     success,
     error
   });

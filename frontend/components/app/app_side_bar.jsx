@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import ListIndex from './list/list_index';
 import ListForm from './list/list_form';
+import {fetchAllTasks} from '../../actions/task_actions';
+import { connect } from 'react-redux';
 
 const modalStyle = {
   overlay : {
@@ -32,16 +34,19 @@ class AppSide extends React.Component {
     super(props);
     this.state = {
       listFormOpen: false,
-      listsAnimation: 'lists-index-container group',
+      listsAnimation: 'lists-index container group',
+      inboxAnimation: 'inbox container group',
       formType: "create-list",
       listId: ""
     };
+
     this.closeModal = this.closeModal.bind(this);
     this.handleAddList = this.handleAddList.bind(this);
     this.handleListsAnimation = this.handleListsAnimation.bind(this);
     this.handleEditList = this.handleEditList.bind(this);
+    this.handleInboxAnimation = this.handleInboxAnimation.bind(this);
+    this.handleAlltasks = this.handleAlltasks.bind(this);
   }
-
 
   closeModal() {
     this.setState({listFormOpen: false});
@@ -60,12 +65,25 @@ class AppSide extends React.Component {
     this.setState({listId: id});
   }
 
-  handleListsAnimation() {
-    if (this.state.listsAnimation === "lists-index-container group") {
-      this.setState({listsAnimation: "lists-index-container group lists-index-clicked"});
+  handleInboxAnimation() {
+    if (this.state.inboxAnimation === "inbox container group") {
+      this.setState({inboxAnimation: "inbox container group inbox-clicked"});
     } else {
-      this.setState({listsAnimation: "lists-index-container group"});
+      this.setState({inboxAnimation: "inbox container group"});
     }
+  }
+
+  handleListsAnimation() {
+    if (this.state.listsAnimation === "lists-index container group") {
+      this.setState({listsAnimation: "lists-index container group lists-index-clicked"});
+    } else {
+      this.setState({listsAnimation: "lists-index container group"});
+    }
+  }
+
+  handleAlltasks(e) {
+    e.stopPropagation();
+    this.props.fetchAllTasks();
   }
 
   render() {
@@ -74,8 +92,14 @@ class AppSide extends React.Component {
         <a href="/#/app" className='app-side-logo'>
           <h1 className="app-side-logo-name">Remember the bacon</h1>
         </a>
+        <div className={this.state.inboxAnimation} onClick={this.handleInboxAnimation}>
+          <h2 className="container-title">Inbox</h2>
+          <ul>
+            <li onClick={this.handleAlltasks}>All Tasks</li>
+          </ul>
+        </div>
         <div className={this.state.listsAnimation} onClick={this.handleListsAnimation}>
-          <h2 className="lists-index-container-title">
+          <h2 className="container-title">
             Lists<i className="fa fa-plus-square-o add-list-button" onClick={this.handleAddList} aria-hidden="true"></i>
           </h2>
           <ListIndex handleEditList={this.handleEditList}/>
@@ -94,4 +118,10 @@ class AppSide extends React.Component {
 }
 
 
-export default AppSide;
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchAllTasks: () => dispatch(fetchAllTasks())
+  };
+}
+
+export default connect(null, mapDispatchToProps)(AppSide);

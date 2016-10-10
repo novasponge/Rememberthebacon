@@ -9,7 +9,7 @@
   right: 130px;
 }
 
-.lists-index-container {
+.container {
   padding-top: 5px;
   padding-bottom: 10px;
   margin-left: 10px;
@@ -27,14 +27,15 @@
   transition: all 0.35s ease-out;
 }
 
-.lists-index-container-title {
+.container-title {
   text-align: left;
   padding: 5px 0 5px 0;
   display: block;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
-.lists-index-container-title:hover {
+.container-title:hover {
   background-color: rgb(191, 215, 239);
 }
 
@@ -50,12 +51,12 @@
   color: #0060bf;
 }
 
-.lists-index {
+.app-side-bar ul {
   display: block;
 }
 
 
-.lists-index > li {
+.app-side-bar li {
   display: block;
   opacity: 1;
   height: 25px;
@@ -64,8 +65,14 @@
   padding-top: 5px;
   padding-bottom: 5px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
-.lists-index > li:hover {
+.app-side-bar li:hover {
   background-color: rgb(191, 215, 239);
+}
+
+.inbox-clicked {
+  max-height: 37px;
+  transition: all 0.35s ease-out;
 }

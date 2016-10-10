@@ -1,6 +1,10 @@
 class Api::TasksController < ApplicationController
   def index
-    @tasks = List.find(params[:list_id]).tasks
+    if params[:list_id]
+      @tasks = List.find(params[:list_id]).tasks
+    else
+      @tasks = Task.all
+    end
   end
 
   def show

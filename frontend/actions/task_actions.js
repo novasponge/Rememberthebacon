@@ -1,4 +1,5 @@
 export const FETCH_ALL_TASKS = "FETCH_ALL_TASKS";
+export const FETCH_LIST_TASKS = "FETCH_LIST_TASKS";
 export const FETCH_ONE_TASK = "FETCH_ONE_TASK";
 export const RECEIVE_ALL_TASKS = "RECEIVE_ALL_TASKS";
 export const RECEVIE_ONE_TASK = "RECEIVE_ONE_TASK";
@@ -8,14 +9,13 @@ export const DESTROY_TASK = 'DESTROY_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const RECEIVE_TASK_DETAIL = "RECEIVE_TASK_DETAIL";
 
-export const fetchAllTasks = (listId) => ({
+export const fetchAllTasks = () => ({
   type: FETCH_ALL_TASKS,
-  listId
 });
 
-export const fetchOneTask = (id) => ({
-  type: FETCH_ONE_TASK,
-  id
+export const fetchListTasks = (listId) => ({
+  type: FETCH_LIST_TASKS,
+  listId
 });
 
 export const receiveAllTasks = (tasks) => ({
