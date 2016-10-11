@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { receiveAllTasks, destroyTask, receiveTaskDetail } from '../../../actions/task_actions';
 import { fetchAllLists } from '../../../actions/list_actions';
+import moment from 'moment';
 
 class TaskIndex extends React.Component{
 
@@ -14,7 +15,7 @@ class TaskIndex extends React.Component{
       <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
         <div className="task-item-container group">
           <div className='task-item-name'>{task.name}</div>
-          <div className='task-due'>{task.due_date}</div>
+          <div className='task-due'>{moment(task.due_date).format('MMMM dd')}</div>
         </div>
       </li>);
 
