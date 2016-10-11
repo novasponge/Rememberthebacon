@@ -15,7 +15,7 @@ class TaskIndex extends React.Component{
       <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
         <div className="task-item-container group">
           <div className='task-item-name'>{task.name}</div>
-          <div className='task-due'>{moment(task.due_date).format('MMMM dd')}</div>
+          <div className='task-due'>{task.due_date}</div>
         </div>
       </li>);
 

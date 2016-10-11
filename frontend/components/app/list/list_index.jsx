@@ -22,7 +22,7 @@ class ListIndex extends React.Component{
   }
 
   render() {
-    const AllLists = this.props.lists.map(list =>
+    const allLists = this.props.lists.map(list =>
       <li key={list.id} onClick={this.handleListShow.bind(this, list)}>
         {list.name}
           <i className="fa fa-minus-square-o list-buttons"
@@ -39,7 +39,7 @@ class ListIndex extends React.Component{
     return(
       <div>
         <ul >
-          {AllLists}
+          {allLists}
         </ul>
       </div>
     );
