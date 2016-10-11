@@ -18,7 +18,7 @@
   top: 0;
   bottom: 0;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .app-side-bar {
@@ -29,7 +29,7 @@
 }
 
 .content {
-  height: 100vh;
+  height: 95vh;
 }
 
 .app-side-logo {
@@ -49,4 +49,10 @@
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.update-form-container {
+  float: left;
+  height: 100%;
+  width: 40%;
 }

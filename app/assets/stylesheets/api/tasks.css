@@ -17,7 +17,6 @@
   height: 108px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px dotted #ccc;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
@@ -26,7 +25,6 @@
   height: 54px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px dotted #ccc;
   transition: all 0.2s ease-in-out;
 }
 
@@ -64,12 +62,13 @@
 }
 
 .task-index li {
-  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-bottom: 1px dotted #ccc;
 }
 
-.task-index li:first-child{
-  margin-top: 10px;
+.task-index li:first-child {
+  border-top: 1px dotted #ccc;
 }
 
 .task-item-container {
@@ -85,4 +84,9 @@
 .task-due {
   color: red;
   float: right;
+}
+
+.task-index {
+  overflow-y: scroll;
+  height: 800px;
 }
