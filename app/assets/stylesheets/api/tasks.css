@@ -88,5 +88,6 @@
 
 .task-index {
   overflow-y: scroll;
-  height: 800px;
+  height: 779px;
+  border-top: 1px dotted #ccc;
 }
