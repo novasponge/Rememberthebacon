@@ -2,7 +2,7 @@ export const FETCH_ALL_TASKS = "FETCH_ALL_TASKS";
 export const FETCH_LIST_TASKS = "FETCH_LIST_TASKS";
 export const FETCH_ONE_TASK = "FETCH_ONE_TASK";
 export const RECEIVE_ALL_TASKS = "RECEIVE_ALL_TASKS";
-export const RECEVIE_ONE_TASK = "RECEIVE_ONE_TASK";
+export const RECEIVE_ONE_TASK = "RECEIVE_ONE_TASK";
 export const UPDATE_TASK = 'UPDATE_TASK';
 export const CREATE_TASK = 'CREATE_TASK';
 export const DESTROY_TASK = 'DESTROY_TASK';
@@ -24,7 +24,7 @@ export const receiveAllTasks = (tasks) => ({
 });
 
 export const receiveOneTask = (task) => ({
-  type: RECEVIE_ONE_TASK,
+  type: RECEIVE_ONE_TASK,
   task
 });
 

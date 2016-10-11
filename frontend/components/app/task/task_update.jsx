@@ -45,8 +45,8 @@ class TaskUpdate extends React.Component {
     e.preventDefault();
     const newTask = {
       name: this.state.name,
-      start_date: this.state.startDate.format("YYYY-MM-DD"),
-      due_date: this.state.dueDate.format("YYYY-MM-DD"),
+      start_date: this.state.startDate ? this.state.startDate.format("YYYY-MM-DD") : null,
+      due_date: this.state.dueDate ? this.state.dueDate.format("YYYY-MM-DD") : null,
       priority: this.state.priority,
       list_id: this.state.listId,
     };
@@ -68,8 +68,8 @@ class TaskUpdate extends React.Component {
   handleCompleted (e) {
     const newTask = {
       name: this.state.name,
-      start_date: this.state.startDate.format("YYYY-MM-DD"),
-      due_date: this.state.dueDate.format("YYYY-MM-DD"),
+      start_date: this.state.startDate ? this.state.startDate.format("YYYY-MM-DD") : null,
+      due_date: this.state.dueDate? this.state.dueDate.format("YYYY-MM-DD") : null,
       listId: this.state.listId,
       completed: true
     };
