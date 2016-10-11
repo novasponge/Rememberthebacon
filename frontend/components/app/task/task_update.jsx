@@ -106,12 +106,15 @@ class TaskUpdate extends React.Component {
             Start<DatePicker
               onChange={this.handleStartDateChange}
               selected={this.state.startDate}
+              isClearable={true}
+              placeholderText="no start date"
             />
           </div>
           <div className="task-update-due-date">
             Due<DatePicker
               selected={this.state.dueDate}
               onChange={this.handleDueDateChange}
+              isClearable={true}
               placeholderText="no due date"
             />
           </div>
