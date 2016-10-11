@@ -16,7 +16,6 @@ class TaskUpdate extends React.Component {
       dueDate : moment(),
       priority : "",
       listId : "",
-      completed: "",
       formState: "update-form",
       oldListId: ""
     };
@@ -34,10 +33,9 @@ class TaskUpdate extends React.Component {
       this.setState({
         name: nextProps.taskDetail.name,
         startDate: nextProps.taskDetail.start_date ? moment(nextProps.taskDetail.start_date, "YYYY-MM-DD") : moment(),
-        dueDate: nextProps.taskDetail.due_date? moment(nextProps.taskDetail.due_date, "YYYY-MM-DD") : moment(),
+        dueDate: nextProps.taskDetail.due_date ? moment(nextProps.taskDetail.due_date, "YYYY-MM-DD") : moment(),
         priority: nextProps.taskDetail.priority,
         listId: nextProps.taskDetail.list_id,
-        completed: nextProps.taskDetail.completed ? "completed" : "Incompleted",
         oldListId: nextProps.taskDetail.list_id
       });
     }
@@ -51,7 +49,6 @@ class TaskUpdate extends React.Component {
       due_date: this.state.dueDate.format("YYYY-MM-DD"),
       priority: this.state.priority,
       list_id: this.state.listId,
-      completed: this.props.taskDetail.completed
     };
     this.props.updateTask(this.props.taskDetail.id, newTask, this.state.oldListId);
   }
@@ -87,7 +84,7 @@ class TaskUpdate extends React.Component {
     const options = this.props.lists.map(list => {
       return {
         value: list.id,
-        lable: list.name
+        label: list.name
       };
     });
     return (
@@ -110,6 +107,7 @@ class TaskUpdate extends React.Component {
           <div>
             list<Dropdown options={options} onChange={this._onSelect} />
           </div>
+          <div>{this.state.completed}</div>
           <button>Update task</button>
           <div onClick={this.handleCompleted}>complete</div>
         </form>

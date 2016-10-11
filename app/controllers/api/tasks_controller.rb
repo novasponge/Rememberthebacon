@@ -1,9 +1,9 @@
 class Api::TasksController < ApplicationController
   def index
     if params[:list_id]
-      @tasks = List.find(params[:list_id]).tasks
+      @tasks = current_user.lists.find(params[:list_id]).tasks
     else
-      @tasks = Task.all
+      @tasks = current_user.tasks
     end
   end
 

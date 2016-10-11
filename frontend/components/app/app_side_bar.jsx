@@ -99,7 +99,7 @@ class AppSide extends React.Component {
         <div className={this.state.inboxAnimation} onClick={this.handleInboxAnimation}>
           <h2 className="container-title">Inbox</h2>
           <ul>
-            <li onClick={this.handleAlltasks}>All Tasks</li>
+            <li onClick={this.handleAlltasks}>All Tasks<div></div></li>
           </ul>
         </div>
         <div className={this.state.listsAnimation} onClick={this.handleListsAnimation}>
@@ -121,11 +121,11 @@ class AppSide extends React.Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     allTasks:
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    allTasks: state.tasks
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return {
