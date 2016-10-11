@@ -30,8 +30,7 @@ const TaskMiddleware = (store) => (next) => (action) => {
       } else {
         success = (data) => {
           store.dispatch(fetchAllLists());
-          store.dispatch(fetchListTasks(action.oldListId));
-          store.dispatch(ACTIONS.receiveOneTask(data));
+          store.dispatch(ACTIONS.removeTask(action.id));
         };
       }
       UTILS.updateTaskReq(action.id, action.task, success, error);

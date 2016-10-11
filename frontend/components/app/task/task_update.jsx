@@ -83,9 +83,9 @@ class TaskUpdate extends React.Component {
   render () {
     let defaultOption;
     const options = this.props.lists.map(list => {
-      if (list.id === this.state.oldListId) {
-        defaultOption = {value: list.id, label: list.name};
-      }
+      // if (list.id === this.state.oldListId) {
+      // const  defaultOption = {value: list.id, label: list.name};
+      // }
       return {
         value: list.id,
         label: list.name

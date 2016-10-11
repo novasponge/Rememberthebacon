@@ -47,10 +47,12 @@ export const destroyTask = (id) => ({
   id
 });
 
-export const removeTask = (id) => ({
-  type: REMOVE_TASK,
-  id
-});
+export const removeTask = (id) => {
+  return {
+    type: REMOVE_TASK,
+    id
+  };
+};
 
 export const receiveTaskDetail = (task) => ({
   type: RECEIVE_TASK_DETAIL,
