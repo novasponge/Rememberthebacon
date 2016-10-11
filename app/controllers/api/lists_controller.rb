@@ -20,9 +20,9 @@ class Api::ListsController < ApplicationController
     render json: @list.id
   end
 
-  def show
-    @list = current_user.lists.list_with_task_number.find(params[:id])
-  end
+  # def show
+  #   @list = current_user.lists.list_with_task_number.find(params[:id])
+  # end
 
   def update
     @list = current_user.lists.list_with_task_number.find(params[:id])
