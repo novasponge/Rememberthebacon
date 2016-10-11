@@ -10,7 +10,7 @@ const RootReducer = combineReducers({
   lists: ListReducer,
   tasks: TaskReducer,
   listDetail : ListDetailReducer,
-  taskDetail : TaskDetailReducer
+  taskDetailId : TaskDetailReducer
 });
 
 

@@ -7,6 +7,8 @@ import Dropdown from 'react-dropdown';
 
 require('react-datepicker/dist/react-datepicker.css');
 
+
+
 class TaskUpdate extends React.Component {
   constructor(props) {
     super(props);
@@ -50,7 +52,9 @@ class TaskUpdate extends React.Component {
       priority: this.state.priority,
       list_id: this.state.listId,
     };
+
     this.props.updateTask(this.props.taskDetail.id, newTask, this.state.oldListId);
+    // resetUpdateForm();
   }
 
   handleTaskNameInput(e) {
@@ -78,14 +82,15 @@ class TaskUpdate extends React.Component {
 
   _onSelect(option) {
     this.setState({listId: option.value});
+
   }
 
   render () {
-    let defaultOption;
+    let defaultOption = {value: this.state.listId, label: 'Select'};
     const options = this.props.lists.map(list => {
-      // if (list.id === this.state.oldListId) {
-      // const  defaultOption = {value: list.id, label: list.name};
-      // }
+      if (list.id === this.state.listId) {
+        defaultOption.label = list.name;
+      }
       return {
         value: list.id,
         label: list.name
@@ -107,12 +112,15 @@ class TaskUpdate extends React.Component {
             Due<DatePicker
               selected={this.state.dueDate}
               onChange={this.handleDueDateChange}
+              placeholderText="no due date"
             />
           </div>
           <div>
-            list<Dropdown options={options} onChange={this._onSelect} value={defaultOption}/>
+            list<Dropdown className="task-list-options"
+              options={options}
+              onChange={this._onSelect}
+              value={defaultOption}/>
           </div>
-          <div>{this.state.completed}</div>
           <button>Update task</button>
           <div onClick={this.handleCompleted}>complete</div>
         </form>
@@ -123,6 +131,7 @@ class TaskUpdate extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    taskDetail: state.tasks[state.taskDetailId],
     lists: Object.keys(state.lists).map(id => state.lists[id])
   };
 }

@@ -18,6 +18,7 @@
   top: 0;
   bottom: 0;
   position: relative;
+  overflow: auto;
 }
 
 .app-side-bar {
@@ -28,12 +29,7 @@
 }
 
 .content {
-  position: absolute;
-  top: 32px;;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
+  height: 100vh;
 }
 
 .app-side-logo {

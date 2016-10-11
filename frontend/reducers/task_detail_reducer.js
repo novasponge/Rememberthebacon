@@ -4,7 +4,7 @@ import { merge } from 'lodash';
 const TaskDetailReducer = ( state=null, action ) => {
   switch (action.type) {
     case RECEIVE_TASK_DETAIL:
-      return action.task;
+      return action.task.id;
     default:
       return state;
   }

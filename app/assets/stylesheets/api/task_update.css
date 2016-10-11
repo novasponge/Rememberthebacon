@@ -1,0 +1,11 @@
+.update-form {
+  width: 40%;
+  height: 100vh;
+  float: left;
+  margin-top: 15px;
+  background-color: #fff;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+}
