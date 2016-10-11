@@ -12,12 +12,12 @@ class TaskUpdate extends React.Component {
     super(props);
     this.state = {
       name: "",
-      startDate: moment(),
-      dueDate : moment(),
+      startDate: null,
+      dueDate : null,
       priority : "",
       listId : "",
       formState: "update-form",
-      oldListId: ""
+      oldListId: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,8 +32,8 @@ class TaskUpdate extends React.Component {
     if (nextProps.taskDetail) {
       this.setState({
         name: nextProps.taskDetail.name,
-        startDate: nextProps.taskDetail.start_date ? moment(nextProps.taskDetail.start_date, "YYYY-MM-DD") : moment(),
-        dueDate: nextProps.taskDetail.due_date ? moment(nextProps.taskDetail.due_date, "YYYY-MM-DD") : moment(),
+        startDate: nextProps.taskDetail.start_date ? moment(nextProps.taskDetail.start_date, "YYYY-MM-DD") : null,
+        dueDate: nextProps.taskDetail.due_date ? moment(nextProps.taskDetail.due_date, "YYYY-MM-DD") : null,
         priority: nextProps.taskDetail.priority,
         listId: nextProps.taskDetail.list_id,
         oldListId: nextProps.taskDetail.list_id
@@ -81,12 +81,17 @@ class TaskUpdate extends React.Component {
   }
 
   render () {
+    let defaultOption;
     const options = this.props.lists.map(list => {
+      if (list.id === this.state.oldListId) {
+        defaultOption = {value: list.id, label: list.name};
+      }
       return {
         value: list.id,
         label: list.name
       };
     });
+
     return (
       <div>
         <form className={this.state.formState} onSubmit={this.handleSubmit}>
@@ -105,7 +110,7 @@ class TaskUpdate extends React.Component {
             />
           </div>
           <div>
-            list<Dropdown options={options} onChange={this._onSelect} />
+            list<Dropdown options={options} onChange={this._onSelect} value={defaultOption}/>
           </div>
           <div>{this.state.completed}</div>
           <button>Update task</button>
