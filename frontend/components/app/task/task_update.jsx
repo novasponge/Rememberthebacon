@@ -98,34 +98,36 @@ class TaskUpdate extends React.Component {
     });
 
     return (
-      <div>
+      <div className="update-form-container group">
         <form className={this.state.formState} onSubmit={this.handleSubmit}>
           <input className="task-update-name" type="text" value={this.state.name}
             onChange={this.handleTaskNameInput} />
-          <div className='task-update-start-date'>
+          <div className='group date'>
             Start<DatePicker
+              className="date-picker"
               onChange={this.handleStartDateChange}
               selected={this.state.startDate}
               isClearable={true}
               placeholderText="no start date"
             />
           </div>
-          <div className="task-update-due-date">
+          <div className="group date">
             Due<DatePicker
+              className="date-picker"
               selected={this.state.dueDate}
               onChange={this.handleDueDateChange}
               isClearable={true}
               placeholderText="no due date"
             />
           </div>
-          <div>
-            list<Dropdown className="task-list-options"
+          <div className="task-list-container group">
+            list<Dropdown
               options={options}
               onChange={this._onSelect}
               value={defaultOption}/>
           </div>
-          <button>Update task</button>
-          <div onClick={this.handleCompleted}>complete</div>
+          <button className="update-task-button">Update task</button>
+          <div onClick={this.handleCompleted} className="update-task-button">complete</div>
         </form>
       </div>
     );

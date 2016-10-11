@@ -9,3 +9,59 @@
   margin-left: 5px;
   border: 1px solid #ccc;
 }
+
+.task-update-name {
+  margin-top: 50px;
+  margin-left: 30px;
+  min-height: 22px;
+  width: 80%;
+  min-width: inherit;
+}
+
+.task-update-name:hover {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.task-update-name:focus {
+  border: 1px solid #3292f2;
+  border-radius: 4px;
+}
+
+.date {
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 25px;
+}
+
+.date-picker {
+  margin-left: 25px;
+}
+
+.task-list-container {
+  margin: 40px;
+}
+
+.update-task-button {
+  color: #fff;
+  display: block;
+  float: right;
+  margin-right: 50%;
+  padding: 5px 10px;
+  background-color: #009dff;
+  border: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-task-button:hover {
+  background-color: #3292f2;
+}
+
+.update-task-button:active {
+  background-color: #0060bf;
+}
+
+.update-task-button:last-child {
+  margin-top: 10px;
+}
