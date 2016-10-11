@@ -4,9 +4,11 @@ class Api::ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
-    @list.author_id = current_user.id
-    if @list.save
+    list = List.new(list_params)
+    list.author_id = current_user.id
+    if list.save
+      @list = current_user.lists.list_with_task_number.find(list.id)
+      debugger
       render :show
     else
       render json: @list.errors.full_messages, status: 422
@@ -16,7 +18,7 @@ class Api::ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    render :show
+    render json: @list.id
   end
 
   def show
@@ -24,7 +26,7 @@ class Api::ListsController < ApplicationController
   end
 
   def update
-    @list = List.find(params[:id])
+    @list = current_user.lists.list_with_task_number.find(params[:id])
     if @list.update(list_params)
       render :show
     else

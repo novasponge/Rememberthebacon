@@ -93,7 +93,10 @@ class AppSide extends React.Component {
   render() {
     let numTask;
     if (this.props.lists.length !== 0 ) {
-      numTask = this.props.lists.reduce((a,b)=> a.num_task + b.num_task);
+      numTask = 0;
+      for (let i = 0; i < this.props.lists.length; i++) {
+        numTask += this.props.lists[i].num_task;
+      }
     }
     return (
       <div className="app-side-bar">
@@ -102,9 +105,7 @@ class AppSide extends React.Component {
         </a>
         <div className={this.state.inboxAnimation} onClick={this.handleInboxAnimation}>
           <h2 className="container-title">Inbox</h2>
-          <ul>
-            <li onClick={this.handleAlltasks}>All Tasks<div className="task-number">{numTask}</div></li>
-          </ul>
+          <button onClick={this.handleAlltasks}>All Tasks<div className="task-number">{numTask}</div></button>
         </div>
         <div className={this.state.listsAnimation} onClick={this.handleListsAnimation}>
           <h2 className="container-title">
