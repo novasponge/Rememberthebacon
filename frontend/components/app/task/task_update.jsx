@@ -54,7 +54,7 @@ class TaskUpdate extends React.Component {
     };
 
     this.props.updateTask(this.props.taskDetail.id, newTask, this.state.oldListId);
-    // resetUpdateForm();
+
   }
 
   handleTaskNameInput(e) {

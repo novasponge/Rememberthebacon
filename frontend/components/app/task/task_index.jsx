@@ -12,8 +12,9 @@ class TaskIndex extends React.Component{
   render() {
     const AllTasks = this.props.tasks.map(task =>
       <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
-        <div className="task-item-container">
-          {task.name}
+        <div className="task-item-container group">
+          <div className='task-item-name'>{task.name}</div>
+          <div className='task-due'>{task.due_date}</div>
         </div>
       </li>);
 
@@ -28,6 +29,7 @@ class TaskIndex extends React.Component{
 }
 
 function mapStateToProps(state) {
+
   return {
     tasks: Object.keys(state.tasks).map(id => state.tasks[id])
   };
