@@ -23,10 +23,12 @@ export const receiveAllTasks = (tasks) => ({
   tasks
 });
 
-export const receiveOneTask = (task) => ({
-  type: RECEIVE_ONE_TASK,
-  task
-});
+export const receiveOneTask = (task) => {
+  return {
+    type: RECEIVE_ONE_TASK,
+    task
+  };
+};
 
 export const updateTask = (id, task, oldListId) => {
   return {type: UPDATE_TASK,

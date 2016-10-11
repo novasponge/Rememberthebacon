@@ -8,7 +8,6 @@ class Api::ListsController < ApplicationController
     list.author_id = current_user.id
     if list.save
       @list = current_user.lists.list_with_task_number.find(list.id)
-      debugger
       render :show
     else
       render json: @list.errors.full_messages, status: 422
@@ -22,7 +21,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
+    @list = current_user.lists.list_with_task_number.find(params[:id])
   end
 
   def update
