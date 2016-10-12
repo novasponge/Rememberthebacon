@@ -7,6 +7,11 @@ class Api::TasksController < ApplicationController
     end
   end
 
+  def search
+    @tasks = current_user.tasks.search_tasks(params[:query])
+    render :index
+  end
+
   # def show
   #   @task = current_user.tasks.find(params[:id])
   # end

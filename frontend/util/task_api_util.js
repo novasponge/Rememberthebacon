@@ -1,3 +1,13 @@
+export const searchTasksReq = (queryStr, success, error) => {
+  $.ajax({
+    method: "GET",
+    url: 'api/tasks/search',
+    data: { query: queryStr },
+    success,
+    error
+  });
+};
+
 export const fetchListTasks = (listId, success, error) => {
   $.ajax({
     method: "GET",

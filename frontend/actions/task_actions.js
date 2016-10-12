@@ -8,9 +8,15 @@ export const CREATE_TASK = 'CREATE_TASK';
 export const DESTROY_TASK = 'DESTROY_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
 export const RECEIVE_TASK_DETAIL = "RECEIVE_TASK_DETAIL";
+export const SEARCH_TASKS = "SEARCH_TASKS";
+
+export const searchTasks = (queryStr) => ({
+  type: SEARCH_TASKS,
+  queryStr
+});
 
 export const fetchAllTasks = () => ({
-  type: FETCH_ALL_TASKS,
+  type: FETCH_ALL_TASKS
 });
 
 export const fetchListTasks = (listId) => ({
