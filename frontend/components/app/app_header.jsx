@@ -15,6 +15,7 @@ class AppHeader extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   handleSearchSting(e) {
     this.setState({queryStr: e.target.value});
   }

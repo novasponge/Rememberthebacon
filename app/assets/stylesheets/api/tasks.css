@@ -5,12 +5,33 @@
   margin-bottom: 1px;
 }
 
+.completed-task-button-container {
+  position: absolute;
+  top: -33px;
+  right: 50px
+}
+
+.completed-task {
+  padding: 5px 10px;
+}
+
+.incompleted-task {
+  padding: 5px 10px;
+}
+
+.clicked-tab {
+  border-top: 1px dotted #ccc;
+  border-left: 1px dotted #ccc;
+  border-right: 1px dotted #ccc;
+  background-color: #fff;
+}
 
 .task-options-container {
   height: 49px;
   width: 100%;
   padding-left: 13px;
   padding-right: 13px;
+  border-bottom: 1px dotted #ccc;
 }
 
 .task-form {
@@ -69,6 +90,10 @@
 
 .task-index li:first-child {
   border-top: 1px dotted #ccc;
+}
+
+.task-index-container {
+  position: relative;
 }
 
 .task-item-container {
