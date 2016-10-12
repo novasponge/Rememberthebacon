@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateTask } from '../../../actions/task_actions';
+import { updateTask, removeTask } from '../../../actions/task_actions';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import Dropdown from 'react-dropdown';
@@ -29,6 +29,7 @@ class TaskUpdate extends React.Component {
     this.handleCompleted = this.handleCompleted.bind(this);
     this._onSelectList = this._onSelectList.bind(this);
     this._onSelectPriority = this._onSelectPriority.bind(this);
+    this.handleRemoveTask = this.handleRemoveTask.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -87,6 +88,10 @@ class TaskUpdate extends React.Component {
 
   _onSelectPriority(option) {
     this.setState({priority: option.value});
+  }
+
+  handleRemoveTask (e) {
+    this.props.removeTask(this.props.taskDetail.id);
   }
 
   render () {
@@ -161,7 +166,12 @@ class TaskUpdate extends React.Component {
               value={listDefaultOption}/>
           </div>
           <button className="update-task-button">Update task</button>
-          <div onClick={this.handleCompleted} className="update-task-button">complete</div>
+          <div onClick={this.handleCompleted}
+               className="update-task-button">complete
+          </div>
+          <div onClick={this.handleRemoveTask}
+               className="update-task-button">Remove task
+          </div>
         </form>
       </div>
     );
@@ -177,7 +187,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateTask: (taskId, task, oldListId) => dispatch(updateTask(taskId, task, oldListId))
+    updateTask: (taskId, task, oldListId) => dispatch(updateTask(taskId, task, oldListId)),
+    removeTask: (taskId) => dispatch(removeTask(taskId))
   };
 }
 

@@ -47,6 +47,7 @@
   display: block;
   float: right;
   margin-right: 50%;
+  margin-top: 10px;
   padding: 5px 10px;
   background-color: #009dff;
   border: transparent;
@@ -60,10 +61,6 @@
 
 .update-task-button:active {
   background-color: #0060bf;
-}
-
-.update-task-button:last-child {
-  margin-top: 10px;
 }
 
 .priority-dropdown {
