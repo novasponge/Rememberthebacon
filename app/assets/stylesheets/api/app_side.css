@@ -59,7 +59,6 @@
 .app-side-bar li {
   display: block;
   opacity: 1;
-  height: 25px;
   overflow-x: hidden;
   overflow-y: hidden;
   padding-top: 5px;
@@ -77,10 +76,23 @@
   transition: all 0.35s ease-out;
 }
 
+.all-tasks {
+  cursor: pointer;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: background-color 0.35s ease-out;
+}
+
+.all-tasks:hover {
+  background-color: rgb(191, 215, 239);
+}
+
 .task-number {
   float: left;
   padding-left: 5px;
   padding-right: 5px;
   margin-right: 15px;
   background-color: #98afc7;
+  border-radius: 4px;
 }

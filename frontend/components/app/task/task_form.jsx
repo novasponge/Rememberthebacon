@@ -36,13 +36,20 @@ class TaskForm extends React.Component {
   }
 
   render() {
+    let formPlaceholder;
+    if (this.props.listDetail) {
+      formPlaceholder = `Add a task to ${this.props.listDetail.name}`;
+    } else {
+      formPlaceholder = 'Select a list to add a task...';
+    }
     return(
       <ClickOutside onClickOutside={this.handleOutSideClick}>
-        <form className={this.state.formState} onSubmit={this.handleSubmit}
-          onClick={this.handleFormClick}>
+        <form className={this.state.formState}
+              onSubmit={this.handleSubmit}
+              onClick={this.handleFormClick}>
           <input className='task-name' type="text" value={this.state.name}
-            onChange={this.handleTaskNameInput} placeholder="Select a list to add a task..."
-            disabled={!this.props.listDetail} />
+          onChange={this.handleTaskNameInput} placeholder={formPlaceholder}
+          disabled={!this.props.listDetail} />
           <button className='add-task' disabled={!this.state.name}>Add Task</button>
         </form>
       </ClickOutside>

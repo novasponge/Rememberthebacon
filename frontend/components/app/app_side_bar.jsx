@@ -105,7 +105,7 @@ class AppSide extends React.Component {
         </a>
         <div className={this.state.inboxAnimation} onClick={this.handleInboxAnimation}>
           <h2 className="container-title">Inbox</h2>
-          <button onClick={this.handleAlltasks}>All Tasks<div className="task-number">{numTask}</div></button>
+          <button onClick={this.handleAlltasks} className="all-tasks">All Tasks<div className="task-number">{numTask}</div></button>
         </div>
         <div className={this.state.listsAnimation} onClick={this.handleListsAnimation}>
           <h2 className="container-title">

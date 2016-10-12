@@ -83,14 +83,21 @@
 }
 
 .task-index li {
+  cursor: pointer;
   padding-top: 5px;
   padding-bottom: 5px;
   border-bottom: 1px dotted #ccc;
+  transition: background-color 0.35s ease-out;
 }
 
 .task-index li:first-child {
   border-top: 1px dotted #ccc;
 }
+
+.task-index li:hover {
+  background-color: rgb(255, 255, 215);
+}
+
 
 .task-index-container {
   position: relative;
@@ -100,7 +107,9 @@
   margin-left: 10px;
   margin-right: 10px;
   font-size: 13px;
+  transition: background-color 0.35s ease-out;
 }
+
 
 .task-item-name {
   float: left;
