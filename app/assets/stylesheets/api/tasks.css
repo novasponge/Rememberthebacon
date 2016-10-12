@@ -8,7 +8,8 @@
 .completed-task-button-container {
   position: absolute;
   top: -33px;
-  right: 50px
+  right: 50px;
+  color: #3292f2;
 }
 
 .completed-task {
@@ -24,6 +25,8 @@
   border-left: 1px dotted #ccc;
   border-right: 1px dotted #ccc;
   background-color: #fff;
+  color: #000;
+  font-weight: bold;
 }
 
 .task-options-container {
@@ -104,20 +107,21 @@
 }
 
 .task-item-container {
+  display: flex;
+  justify-content: space-between;
   margin-left: 10px;
   margin-right: 10px;
   font-size: 13px;
   transition: background-color 0.35s ease-out;
 }
 
-
 .task-item-name {
-  float: left;
+  display: flex;
+  justify-content: left;
 }
 
 .task-due {
   color: red;
-  float: right;
 }
 
 .task-index {

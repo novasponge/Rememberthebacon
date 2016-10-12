@@ -65,3 +65,44 @@
 .update-task-button:last-child {
   margin-top: 10px;
 }
+
+.priority-dropdown {
+  margin: 40px;
+}
+
+.priority-dropdown .Dropdown-control{
+  width: 170px;
+}
+
+.priority-option {
+  display: flex;
+  justify-content: left
+}
+
+.priority-1 {
+  width: 3px;
+  height: 18px;
+  margin-right: 3px;
+  background-color: rgb(234, 82, 0);
+}
+
+.priority-2 {
+  width: 3px;
+  height: 18px;
+  margin-right: 3px;
+  background-color: rgb(0, 96, 191);
+}
+
+.priority-3 {
+  width: 3px;
+  height: 18px;
+  margin-right: 3px;
+  background-color: rgb(53, 154, 255);
+}
+
+.priority-null {
+  width: 3px;
+  height: 18px;
+  margin-right: 3px;
+  background-color: rgb(204, 204, 204);
+}

@@ -43,11 +43,15 @@ class TaskIndex extends React.Component{
     const nextTasks = this.props.tasks.filter(task=> task.completed === this.state.completed);
     const AllTasks = nextTasks.map(task =>
       <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
-        <div className="task-item-container group">
-          <div className='task-item-name'>{task.name}</div>
+        <div className="task-item-container">
+          <div className='task-item-name'>
+            <div className={`priority-${task.priority}`} />
+            <div >{task.name}</div>
+          </div>
           <div className='task-due'>{task.due_date}</div>
         </div>
-      </li>);
+      </li>
+    );
 
     return(
       <div className='task-index-container'>

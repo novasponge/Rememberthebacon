@@ -27,7 +27,8 @@ class TaskUpdate extends React.Component {
     this.handleDueDateChange = this.handleDueDateChange.bind(this);
     this.handleStartDateChange = this.handleStartDateChange.bind(this);
     this.handleCompleted = this.handleCompleted.bind(this);
-    this._onSelect = this._onSelect.bind(this);
+    this._onSelectList = this._onSelectList.bind(this);
+    this._onSelectPriority = this._onSelectPriority.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -80,16 +81,19 @@ class TaskUpdate extends React.Component {
     this.props.updateTask(this.props.taskDetail.id, newTask);
   }
 
-  _onSelect(option) {
+  _onSelectList(option) {
     this.setState({listId: option.value});
+  }
 
+  _onSelectPriority(option) {
+    this.setState({priority: option.value});
   }
 
   render () {
-    let defaultOption = {value: this.state.listId, label: 'Select'};
-    const options = this.props.lists.map(list => {
+    let listDefaultOption = {value: this.state.listId, label: 'Select'};
+    const listOptions = this.props.lists.map(list => {
       if (list.id === this.state.listId) {
-        defaultOption.label = list.name;
+        listDefaultOption.label = list.name;
       }
       return {
         value: list.id,
@@ -97,11 +101,41 @@ class TaskUpdate extends React.Component {
       };
     });
 
+    let priorityDefaultOpition = {value: this.state.priority, label: 'Select'};
+    const priorityOptions = [
+      {value: 1, label: <div className="priority-option">
+                          <div className="priority-1" />Priority 1
+                        </div>},
+      {value: 2, label: <div className="priority-option">
+                          <div className="priority-2" />Priority 2
+                        </div>},
+      {value: 3, label: <div className="priority-option">
+                          <div className="priority-3"/>Priority 3
+                        </div>},
+      {value: null, label: <div className="priority-option">
+                          <div className="priority-null"/>No priority
+                         </div>}
+    ];
+
+    priorityOptions.forEach(option => {
+      if (this.state.priority === option.value) {
+        priorityDefaultOpition.label = option.label;
+      }
+    });
+
     return (
       <div className="update-form-container group">
         <form className={this.state.formState} onSubmit={this.handleSubmit}>
-          <input className="task-update-name" type="text" value={this.state.name}
-            onChange={this.handleTaskNameInput} />
+          <input className="task-update-name"
+                   type="text"
+                   value={this.state.name}
+                   onChange={this.handleTaskNameInput}/>
+         <div className="priority-dropdown">
+           <Dropdown
+                     options={priorityOptions}
+                     onChange={this._onSelectPriority}
+                     value={priorityDefaultOpition}/>
+         </div>
           <div className='group date'>
             Start<DatePicker
               className="date-picker"
@@ -122,9 +156,9 @@ class TaskUpdate extends React.Component {
           </div>
           <div className="task-list-container group">
             list<Dropdown
-              options={options}
-              onChange={this._onSelect}
-              value={defaultOption}/>
+              options={listOptions}
+              onChange={this._onSelectList}
+              value={listDefaultOption}/>
           </div>
           <button className="update-task-button">Update task</button>
           <div onClick={this.handleCompleted} className="update-task-button">complete</div>
