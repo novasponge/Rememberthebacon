@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { fetchAllLists, destroyList, receiveListDetail} from '../../../actions/list_actions';
-import { fetchListTasks } from '../../../actions/task_actions';
+import { fetchListTasks, receiveTaskDetail } from '../../../actions/task_actions';
 
 
 class ListIndex extends React.Component{
@@ -19,6 +19,8 @@ class ListIndex extends React.Component{
     e.stopPropagation();
     this.props.receiveListDetail(list);
     this.props.fetchListTasks(list.id);
+    this.props.receiveTaskDetail(null);
+
   }
 
   render() {
@@ -57,7 +59,8 @@ function mapDispatchToProps(dispatch) {
     fetchAllLists: () => dispatch(fetchAllLists()),
     destroyList: (id) => dispatch(destroyList(id)),
     receiveListDetail: (list) => dispatch(receiveListDetail(list)),
-    fetchListTasks: (listId) => dispatch(fetchListTasks(listId))
+    fetchListTasks: (listId) => dispatch(fetchListTasks(listId)),
+    receiveTaskDetail: (task) => dispatch(receiveTaskDetail(task)),
   };
 }
 

@@ -128,53 +128,59 @@ class TaskUpdate extends React.Component {
       }
     });
 
-    return (
-      <div className="update-form-container group">
-        <form className={this.state.formState} onSubmit={this.handleSubmit}>
+    if (this.props.taskDetail) {
+      return (
+        <div className="update-form-container group">
+          <form className={this.state.formState} onSubmit={this.handleSubmit}>
           <input className="task-update-name"
-                   type="text"
-                   value={this.state.name}
-                   onChange={this.handleTaskNameInput}/>
-         <div className="priority-dropdown">
-           <Dropdown
-                     options={priorityOptions}
-                     onChange={this._onSelectPriority}
-                     value={priorityDefaultOpition}/>
-         </div>
+                 type="text"
+                 value={this.state.name}
+                 onChange={this.handleTaskNameInput}/>
+          <div className="priority-dropdown">
+            <Dropdown
+                    options={priorityOptions}
+                    onChange={this._onSelectPriority}
+                    value={priorityDefaultOpition}/>
+          </div>
           <div className='group date'>
             Start<DatePicker
-              className="date-picker"
-              onChange={this.handleStartDateChange}
-              selected={this.state.startDate}
-              isClearable={true}
-              placeholderText="no start date"
+                            className="date-picker"
+                            onChange={this.handleStartDateChange}
+                            selected={this.state.startDate}
+                            isClearable={true}
+                            placeholderText="no start date"
             />
           </div>
           <div className="group date">
             Due<DatePicker
-              className="date-picker"
-              selected={this.state.dueDate}
-              onChange={this.handleDueDateChange}
-              isClearable={true}
-              placeholderText="no due date"
-            />
+                          className="date-picker"
+                          selected={this.state.dueDate}
+                          onChange={this.handleDueDateChange}
+                          isClearable={true}
+                          placeholderText="no due date"
+          />
           </div>
           <div className="task-list-container group">
             list<Dropdown
-              options={listOptions}
-              onChange={this._onSelectList}
-              value={listDefaultOption}/>
+                         options={listOptions}
+                         onChange={this._onSelectList}
+                         value={listDefaultOption}/>
           </div>
           <button className="update-task-button">Update task</button>
           <div onClick={this.handleCompleted}
-               className="update-task-button">complete
+            className="update-task-button">complete
           </div>
           <div onClick={this.handleRemoveTask}
-               className="update-task-button">Remove task
+            className="update-task-button">Remove task
           </div>
         </form>
-      </div>
-    );
+        </div>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
   }
 }
 
