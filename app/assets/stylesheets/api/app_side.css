@@ -57,6 +57,8 @@
 
 
 .app-side-bar li {
+  font-size: 13px;
+  font-weight: bold;
   display: block;
   opacity: 1;
   overflow-x: hidden;
@@ -65,7 +67,7 @@
   padding-bottom: 5px;
   transition: all 0.3s;
   cursor: pointer;
-  height: 32px;
+  height: 28px;
 }
 
 .app-side-bar li:hover {
@@ -108,4 +110,5 @@
   float: right;
   height: 100%;
   padding-top: 3px;
+  font-size: 18px;
 }
