@@ -26,6 +26,18 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+
+  def today_tasks_number
+    today = Date.today.to_s
+    # Task.where("tasks.due_date = '#{today}'").count
+    tasks.where(due_date: today).count
+  end
+
+  def tomorrow_tasks_number
+    tomorrow = Date.tomorrow.to_s
+    tasks.where("tasks.due_date = '#{tomorrow}'").count
+  end
+
   attr_reader :password
   def password=(password)
     @password = password

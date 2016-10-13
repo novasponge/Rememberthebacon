@@ -1,6 +1,8 @@
 class Api::ListsController < ApplicationController
   def index
     @lists = current_user.lists.list_with_task_number
+    @today_tasks_number = current_user.today_tasks_number
+    @tomorrow_tasks_number = current_user.tomorrow_tasks_number
   end
 
   def create

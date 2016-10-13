@@ -1,17 +1,23 @@
 import { RECEIVE_ALL_LISTS, RECEIVE_ONE_LIST, REMOVE_LIST } from "../actions/list_actions";
 import { merge } from 'lodash';
 
-const ListReducer = (state = {}, action) => {
+const _defaultState = {
+  list_index_info: {},
+  task_num_info: {}
+};
+
+const ListReducer = (state = _defaultState, action) => {
   switch(action.type) {
     case RECEIVE_ALL_LISTS:
-      return action.lists;
+      const nextState = merge({}, state, {list_index_info: action.list_index_info, task_num_info: action.task_num_info });
+      return nextState;
     case RECEIVE_ONE_LIST:
-      const newList = {[action.list.id]: action.list};
+      const newList = {list_index_info: {[action.list.id]: action.list}};
       return merge({}, state, newList);
     case REMOVE_LIST:
       const listId = action.id;
       const newState = merge({}, state);
-      delete newState[listId];
+      delete newState.list_index_info[listId];
       return newState;
     default:
       return state;

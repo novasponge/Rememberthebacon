@@ -12,9 +12,10 @@ export const fetchAllLists = () => ({
   type: FETCH_ALL_LISTS,
 });
 
-export const receiveAllLists = (lists) => ({
+export const receiveAllLists = ({list_index_info, task_num_info}) => ({
   type: RECEIVE_ALL_LISTS,
-  lists
+  list_index_info,
+  task_num_info
 });
 
 export const receiveOneList = (list) => ({

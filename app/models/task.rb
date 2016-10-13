@@ -23,6 +23,16 @@ class Task < ApplicationRecord
     through: :list,
     source: :author
 
+  # def self.today_tasks_number
+  #   today = Date.today.to_s
+  #   # Task.where("tasks.due_date = '#{today}'").count
+  #   Task.where(due_date: today).count
+  # end
+  #
+  # def self.tomorrow_tasks_number
+  #   tomorrow = Date.tomorrow.to_s
+  #   Task.where("tasks.due_date = '#{tomorrow}'").count
+  # end
 
   def self.search_tasks(queryStr)
     queryStr = queryStr.split(" ")

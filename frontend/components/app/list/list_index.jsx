@@ -20,7 +20,6 @@ class ListIndex extends React.Component{
     this.props.receiveListDetail(list);
     this.props.fetchListTasks(list.id);
     this.props.receiveTaskDetail(null);
-
   }
 
   render() {
@@ -54,7 +53,7 @@ class ListIndex extends React.Component{
 
 function mapStateToProps(state) {
   return {
-  lists: Object.keys(state.lists).map( id => state.lists[id])
+    lists: Object.keys(state.lists.list_index_info).map( id => state.lists.list_index_info[id])
   };
 }
 

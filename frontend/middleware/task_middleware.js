@@ -33,6 +33,7 @@ const TaskMiddleware = (store) => (next) => (action) => {
       if (action.oldListId === action.task.list_id) {
         success = (data) => {
           store.dispatch(ACTIONS.receiveTaskDetail(data));
+          store.dispatch(fetchAllLists());
         };
       } else {
         success = (data) => {

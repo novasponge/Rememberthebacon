@@ -14,10 +14,12 @@
 
 .completed-task {
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .incompleted-task {
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .clicked-tab {

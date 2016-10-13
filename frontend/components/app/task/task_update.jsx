@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateTask, destroyTask } from '../../../actions/task_actions';
+import { fetchAllLists } from '../../../actions/list_actions';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import Dropdown from 'react-dropdown';
@@ -56,7 +57,6 @@ class TaskUpdate extends React.Component {
     };
 
     this.props.updateTask(this.props.taskDetail.id, newTask, this.state.oldListId);
-
   }
 
   handleTaskNameInput(e) {
@@ -187,14 +187,15 @@ class TaskUpdate extends React.Component {
 function mapStateToProps(state) {
   return {
     taskDetail: state.tasks[state.taskDetailId],
-    lists: Object.keys(state.lists).map(id => state.lists[id])
+    lists: Object.keys(state.lists.list_index_info).map(id => state.lists.list_index_info[id])
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     updateTask: (taskId, task, oldListId) => dispatch(updateTask(taskId, task, oldListId)),
-    destroyTask: (taskId) => dispatch(destroyTask(taskId))
+    destroyTask: (taskId) => dispatch(destroyTask(taskId)),
+    fetchAllLists: () => dispatch(fetchAllLists())
   };
 }
 
