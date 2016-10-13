@@ -112,7 +112,7 @@ class TaskIndex extends React.Component{
         <div className="completed-task-button-container">
           <button className={`incompleted-task ${this.state.incompleteTab}`}
           onClick={this.showIncompleted}
-          >Incompleted</button>
+          >Incomplete</button>
           <button className={`completed-task ${this.state.completedTab}`}
           onClick={this.showCompleted}
           >Completed</button>
