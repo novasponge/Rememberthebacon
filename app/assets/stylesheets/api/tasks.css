@@ -129,3 +129,12 @@
   height: 779px;
   border-top: 1px dotted #ccc;
 }
+
+.crossed .task-item-name {
+  text-decoration: line-through;
+  color: #7e7e7e;
+}
+
+.crossed .task-due {
+  color: #ccc;
+}

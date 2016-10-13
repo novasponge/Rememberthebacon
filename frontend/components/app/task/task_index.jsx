@@ -10,6 +10,7 @@ class TaskIndex extends React.Component{
     super(props);
     this.state = {
       completed: false,
+      indexStyle: '',
       completedTab: "unclicked-tab",
       incompleteTab: "clicked-tab"
     };
@@ -24,18 +25,20 @@ class TaskIndex extends React.Component{
   }
 
   showCompleted (e) {
-    this.setState({completed: true});
     this.setState({
+      completed: true,
       completedTab: "clicked-tab",
       incompleteTab: "unclicked-tab",
+      indexStyle: "crossed"
     });
   }
 
   showIncompleted (e) {
-    this.setState({completed: false});
     this.setState({
+      completed: false,
       completedTab: "unclicked-tab",
       incompleteTab: "clicked-tab",
+      indexStyle: ""
     });
   }
 
@@ -64,7 +67,7 @@ class TaskIndex extends React.Component{
           >Completed</button>
         </div>
         <TaskForm listDetail={this.props.listDetail} />
-        <ul className="task-index">
+        <ul className={`task-index ${this.state.indexStyle}`}>
           {AllTasks}
         </ul>
       </div>
