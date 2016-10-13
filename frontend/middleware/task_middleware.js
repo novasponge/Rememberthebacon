@@ -6,6 +6,10 @@ const TaskMiddleware = (store) => (next) => (action) => {
   let success;
   let error = (data) => console.log(data);
   switch (action.type) {
+    case ACTIONS.DESTROY_TASK:
+      success = (data) => store.dispatch(ACTIONS.removeTask(data.id));
+      UTILS.destroyTaskReq(action.id, success, error);
+      return next(action);
     case ACTIONS.SEARCH_TASKS:
       success = (data) => store.dispatch(ACTIONS.receiveAllTasks(data));
       UTILS.searchTasksReq(action.queryStr, success, error);

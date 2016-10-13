@@ -100,3 +100,35 @@
   display: block;
   padding: 8px 10px;
 }
+
+.task-summary-container {
+  position: absolute;
+  right: -330px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-summary {
+  padding: 9px 13px;
+  background-color: #b3c1d1;
+  margin-left: 5px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.summary-num {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.incomplete-task-num {
+  color: #0060bf;
+}
+
+.completed-task-num {
+  opacity: 0.4;
+}
+
+.overdue {
+  color: #d74a00;
+}

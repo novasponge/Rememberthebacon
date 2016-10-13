@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateTask, removeTask } from '../../../actions/task_actions';
+import { updateTask, destroyTask } from '../../../actions/task_actions';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import Dropdown from 'react-dropdown';
@@ -91,7 +91,7 @@ class TaskUpdate extends React.Component {
   }
 
   handleRemoveTask (e) {
-    this.props.removeTask(this.props.taskDetail.id);
+    this.props.destroyTask(this.props.taskDetail.id);
   }
 
   render () {
@@ -127,7 +127,7 @@ class TaskUpdate extends React.Component {
         priorityDefaultOpition.label = option.label;
       }
     });
-    
+
     if (this.props.taskDetail) {
       return (
         <div className="update-form-container group">
@@ -194,7 +194,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     updateTask: (taskId, task, oldListId) => dispatch(updateTask(taskId, task, oldListId)),
-    removeTask: (taskId) => dispatch(removeTask(taskId))
+    destroyTask: (taskId) => dispatch(destroyTask(taskId))
   };
 }
 
