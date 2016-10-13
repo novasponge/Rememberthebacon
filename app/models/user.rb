@@ -29,13 +29,12 @@ class User < ApplicationRecord
 
   def today_tasks_number
     today = Date.today.to_s
-    # Task.where("tasks.due_date = '#{today}'").count
-    tasks.where(due_date: today).count
+    tasks.where(due_date: today).where(completed: false).count
   end
 
   def tomorrow_tasks_number
     tomorrow = Date.tomorrow.to_s
-    tasks.where("tasks.due_date = '#{tomorrow}'").count
+    tasks.where(due_date: tomorrow).where(completed: false).count
   end
 
   attr_reader :password
