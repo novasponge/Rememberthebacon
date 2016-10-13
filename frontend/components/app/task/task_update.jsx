@@ -127,7 +127,7 @@ class TaskUpdate extends React.Component {
         priorityDefaultOpition.label = option.label;
       }
     });
-
+    
     if (this.props.taskDetail) {
       return (
         <div className="update-form-container group">

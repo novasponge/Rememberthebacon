@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import ListIndex from './list/list_index';
 import ListForm from './list/list_form';
-import {fetchAllTasks} from '../../actions/task_actions';
+import { fetchAllTasks, receiveTaskDetail } from '../../actions/task_actions';
 import { connect } from 'react-redux';
 
 const modalStyle = {
@@ -88,6 +88,7 @@ class AppSide extends React.Component {
   handleAlltasks(e) {
     e.stopPropagation();
     this.props.fetchAllTasks();
+    this.props.receiveTaskDetail(null);
   }
 
   render() {
@@ -134,7 +135,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchAllTasks: () => dispatch(fetchAllTasks())
+    fetchAllTasks: () => dispatch(fetchAllTasks()),
+    receiveTaskDetail: (task) => dispatch(receiveTaskDetail(task))
   };
 }
 

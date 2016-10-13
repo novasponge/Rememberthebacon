@@ -26,16 +26,20 @@ class ListIndex extends React.Component{
   render() {
     const allLists = this.props.lists.map(list =>
       <li key={list.id} onClick={this.handleListShow.bind(this, list)}>
-        {list.name}
+        <div className='task-number'>{list.num_task}</div>
+        <div className="list-item-name">{list.name}</div>
+        <div className="list-item-icon">
           <i className="fa fa-minus-square-o list-buttons"
-            aria-hidden="true"
-            onClick={this.handleRemoveClick.bind(this, list.id)}>
+          aria-hidden="true"
+          onClick={this.handleRemoveClick.bind(this, list.id)}>
           </i>
+        </div>
+        <div className="list-item-icon">
           <i className="fa fa-pencil-square-o list-buttons"
-            aria-hidden="true"
-            onClick={this.props.handleEditList.bind(null, list.id)}>
+          aria-hidden="true"
+          onClick={this.props.handleEditList.bind(null, list.id)}>
           </i>
-          <div className='task-number'>{list.num_task}</div>
+        </div>
       </li>);
 
     return(

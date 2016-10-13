@@ -7,7 +7,7 @@ const TaskDetailReducer = ( state=null, action ) => {
       if (action.task) {
         return action.task.id;
       }
-      return state;
+      return null;
     default:
       return state;
   }
