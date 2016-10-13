@@ -104,7 +104,7 @@
   height: 100%;
   float: left;
   width: 55%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .list-item-icon {
