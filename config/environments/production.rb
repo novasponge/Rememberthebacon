@@ -57,12 +57,14 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "fullstack_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.delivery_method = :smtp
+
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: 587,
-    domain: ENV['domain'],
-    user_name: ENV['username'],
-    password: ENV['password'],
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    port: ENV['MAILGUN_SMTP_PORT'],
+    domain: 'rememberthebacon.herokuapp.com',
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD'],
     authentication: :plain
   }
 
