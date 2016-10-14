@@ -26,6 +26,13 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  def self.send_notification
+    User.all.each do |user|
+      unless user.tasks_due_tomorrow.empty?
+        NoticeMailer.task_due_tomorrow_notice(user).deliver_now
+      end
+    end
+  end
 
   def today_tasks_number
     today = Date.today.to_s
@@ -35,6 +42,11 @@ class User < ApplicationRecord
   def tomorrow_tasks_number
     tomorrow = Date.tomorrow.to_s
     tasks.where(due_date: tomorrow).where(completed: false).count
+  end
+
+  def tasks_due_tomorrow
+    tomorrow = Date.tomorrow.to_s
+    tasks.where(due_date: tomorrow).where(completed: false)
   end
 
   attr_reader :password

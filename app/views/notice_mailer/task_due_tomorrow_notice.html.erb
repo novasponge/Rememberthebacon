@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Task due tomorrow</h1>
+
+    <ul>
+      <% @user.tasks_due_tomorrow.each do |task|%>
+        <%= task.name %>
+      <% end %>
+    </ul>
+  </body>
+</html>
