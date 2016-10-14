@@ -111,9 +111,8 @@ class AppSide extends React.Component {
   }
 
   render() {
-    let numTask;
+    let numTask = 0;
     if (this.props.lists.length !== 0 ) {
-      numTask = 0;
       for (let i = 0; i < this.props.lists.length; i++) {
         numTask += this.props.lists[i].num_task;
       }
