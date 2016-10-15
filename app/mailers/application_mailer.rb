@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'notification@erememberthebacon.herokuapp.com'
+  default from: 'notification@rememberthebacon.co'
   layout 'mailer'
 end
