@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.errors.includes("Invalid email address") || this.props.errors.includes("Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number" )) {
+    if (this.props.errors.includes("Invalid email address") || this.props.errors.includes("Minimum 6 letters, at least 1 capital letter, 1 symbol, and 1 number." )) {
       return;
     } else {
       this.props.signup(this.state);
@@ -48,10 +48,10 @@ class SignupForm extends React.Component {
     const password = this.state.password;
 
     if (password.match(STRONGPASSWORD)) {
-      this.props.clearError("Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number");
+      this.props.clearError("Minimum 6 letters, at least 1 capital letter, 1 symbol, and 1 number.");
     } else {
-      if (!this.props.errors.includes("Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number")) {
-        this.props.receiveErrors(this.props.errors.concat(["Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number"]));
+      if (!this.props.errors.includes("Minimum 6 letters, at least 1 capital letter, 1 symbol, and 1 number.")) {
+        this.props.receiveErrors(this.props.errors.concat(["Minimum 6 letters, at least 1 capital letter, 1 symbol, and 1 number."]));
       }
     }
   }

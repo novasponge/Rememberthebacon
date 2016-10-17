@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_LISTS, RECEIVE_ONE_LIST, REMOVE_LIST } from "../actions/list_actions";
+import { RECEIVE_ALL_LISTS, RECEIVE_ONE_LIST, REMOVE_LIST, ADD_TASK_NUM_TO_LIST } from "../actions/list_actions";
 import { merge } from 'lodash';
 
 const _defaultState = {
