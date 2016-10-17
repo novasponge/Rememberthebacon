@@ -10,8 +10,8 @@
 
 Remember the Bacon is a web application inspired by Remember the milk, a to-do list web app built using Ruby on Rails on the backend.
 
-[lists with tasks](/doc/screen_shot/lists.png)
-[tasks edit](/doc/screen_shot/tasks.png)
+![lists with tasks](/doc/screen_shot/lists.png)
+![tasks edit](/doc/screen_shot/tasks.png)
 
 Rememberthebacon allows user to:
 
