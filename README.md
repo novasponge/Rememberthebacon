@@ -30,7 +30,7 @@ Rememberthebacon allows user to:
 The app was built using Ruby on Rails on the back end with a postgreSQL database.
 
 #### Front end
-The front end is built completely in [React.js][React] and JavaScript and utilizes React's [Redux](http://redux.js.org/) architecture.
+The front end is built completely in [React.js](https://facebook.github.io/react/) and JavaScript and utilizes React's [Redux](http://redux.js.org/) architecture.
 
 #### Libraries
 
