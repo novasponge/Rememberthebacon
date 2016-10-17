@@ -12,10 +12,6 @@ class Api::TasksController < ApplicationController
     render :index
   end
 
-  # def show
-  #   @task = current_user.tasks.find(params[:id])
-  # end
-
   def create
     @task = Task.new(task_params)
     if @task.save

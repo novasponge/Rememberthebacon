@@ -1,18 +1,3 @@
-# == Schema Information
-#
-# Table name: tasks
-#
-#  id         :integer          not null, primary key
-#  name       :string           not null
-#  completed  :boolean          default(FALSE)
-#  start_date :date
-#  due_date   :date
-#  priority   :integer
-#  list_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class Task < ApplicationRecord
   validates :list, :name, presence: true
 
@@ -22,17 +7,6 @@ class Task < ApplicationRecord
     class_name: 'User',
     through: :list,
     source: :author
-
-  # def self.today_tasks_number
-  #   today = Date.today.to_s
-  #   # Task.where("tasks.due_date = '#{today}'").count
-  #   Task.where(due_date: today).count
-  # end
-  #
-  # def self.tomorrow_tasks_number
-  #   tomorrow = Date.tomorrow.to_s
-  #   Task.where("tasks.due_date = '#{tomorrow}'").count
-  # end
 
   def self.search_tasks(queryStr)
     queryStr = queryStr.split(" ")

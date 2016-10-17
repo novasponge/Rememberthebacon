@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: lists
-#
-#  id         :integer          not null, primary key
-#  author_id  :integer          not null
-#  name       :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class List < ApplicationRecord
   validates :author, :name, presence: true
 
@@ -24,5 +13,5 @@ class List < ApplicationRecord
         .joins("LEFT OUTER JOIN tasks ON tasks.list_id = lists.id")
         .group('lists.id')
   end
-  
+
 end
