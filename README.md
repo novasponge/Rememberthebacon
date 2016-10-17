@@ -77,4 +77,8 @@ Users will be notified of their tasks via email a day ahead of the tasks' due da
 
 Users will be able to add other users and assign tasks to other users.
 
-Move number of tasks tracking completely to frontend.
+Users will be able to add tags to their tasks.
+
+Users will be able to use smart lists, a list auto creation feather which creates lists with tasks based on given criteria.
+
+Users will be able to add location to their tasks
