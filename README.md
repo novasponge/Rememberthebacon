@@ -48,7 +48,7 @@ Remember the Bacon uses:
 
 ## key Features
 
-#### Tracking numbers of tasks accordingly.
+#### Tracking numbers of tasks accordingly
 
 Users can track their number of tasks by list, due date and completion status.
 
