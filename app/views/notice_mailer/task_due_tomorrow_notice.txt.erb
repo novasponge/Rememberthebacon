@@ -1,4 +1,4 @@
 Task due tomorrow
 <% @user.tasks_due_tomorrow.each do |task|%>
-  <%= task.name %>
+  <%= "#{task.name}\n" %>
 <% end %>

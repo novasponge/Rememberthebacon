@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.errors.includes("Invalid email address") || this.props.errors.includes("Password is too weak" )) {
+    if (this.props.errors.includes("Invalid email address") || this.props.errors.includes("Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number" )) {
       return;
     } else {
       this.props.signup(this.state);
@@ -48,10 +48,10 @@ class SignupForm extends React.Component {
     const password = this.state.password;
 
     if (password.match(STRONGPASSWORD)) {
-      this.props.clearError("Password is too weak");
+      this.props.clearError("Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number");
     } else {
-      if (!this.props.errors.includes("Password is too weak")) {
-        this.props.receiveErrors(this.props.errors.concat(["Password is too weak"]));
+      if (!this.props.errors.includes("Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number")) {
+        this.props.receiveErrors(this.props.errors.concat(["Minimum 6 letters. at least 1 capital letter, 1 symbol, and 1 number"]));
       }
     }
   }
@@ -70,7 +70,7 @@ class SignupForm extends React.Component {
     this.props.errors.map(error => {
       if (error.toLowerCase().indexOf("email") != -1) {
         emailError = <div className="email-error">{error}</div>;
-      } else if (error.toLowerCase().indexOf("password") != -1) {
+      } else if (error.toLowerCase().indexOf("minimum") != -1) {
         passwordError = <div className='password-error'>{error}</div>;
       } else if (error.toLowerCase().indexOf("username") != -1) {
         userError = <div className='user-error'>{error}</div>;

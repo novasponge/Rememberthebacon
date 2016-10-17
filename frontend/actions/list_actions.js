@@ -13,6 +13,7 @@ export const ADD_TASK_NUM_TO_LIST = "ADD_TASK_NUM_TO_LIST";
 export const addTaskNumToList = (listId, numTask) => {
   return {
     type: ADD_TASK_NUM_TO_LIST,
+    listId,
     numTask
   }
 };
