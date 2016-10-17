@@ -7,6 +7,15 @@ export const CREATE_LIST = 'CREATE_LIST';
 export const DESTROY_LIST = 'DESTROY_LIST';
 export const REMOVE_LIST = 'REMOVE_LIST';
 export const RECEIVE_LIST_DETAIL = 'RECEIVE_LIST_DETAIL';
+export const ADD_TASK_NUM_TO_LIST = "ADD_TASK_NUM_TO_LIST";
+
+
+export const addTaskNumToList = (listId, numTask) => {
+  return {
+    type: ADD_TASK_NUM_TO_LIST,
+    numTask
+  }
+};
 
 export const fetchAllLists = () => ({
   type: FETCH_ALL_LISTS,
