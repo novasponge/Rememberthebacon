@@ -1,5 +1,6 @@
 import * as ACTIONS from '../actions/list_actions';
 import * as UTILS from '../util/list_api_util';
+import { receiveAllTasks } from '../actions/task_actions';
 
 const ListMiddleware = (store) => (next) => (action) => {
   let success;
@@ -18,7 +19,10 @@ const ListMiddleware = (store) => (next) => (action) => {
       UTILS.updateListReq(action.id, action.list, success, error);
       return next(action);
     case ACTIONS.DESTROY_LIST:
-      success = (data) => store.dispatch(ACTIONS.removeList(data));
+      success = (data) => {
+        store.dispatch(ACTIONS.removeList(data));
+        store.dispatch(receiveAllTasks({}));
+      };
       UTILS.destroyListReq(action.id, success, error);
       return next(action);
     default:

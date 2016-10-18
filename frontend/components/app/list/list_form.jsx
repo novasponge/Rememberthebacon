@@ -50,7 +50,8 @@ class ListForm extends React.Component {
             <label>list name</label>
             <form onSubmit={this.handleSubmit}>
               <input className='list-name' type='text' value={this.state.name}
-                onChange={this.handleListNameInput} />
+                onChange={this.handleListNameInput}
+                placeholder={this.props.listName} />
               <button className='add-list list-form-button'>Save</button>
             </form>
           </div>

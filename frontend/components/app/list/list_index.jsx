@@ -36,7 +36,7 @@ class ListIndex extends React.Component{
         <div className="list-item-icon">
           <i className="fa fa-pencil-square-o list-buttons"
           aria-hidden="true"
-          onClick={this.props.handleEditList.bind(null, list.id)}>
+          onClick={this.props.handleEditList.bind(null, list.id, list.name)}>
           </i>
         </div>
       </li>);

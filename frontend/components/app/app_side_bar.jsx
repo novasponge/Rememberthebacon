@@ -39,6 +39,7 @@ class AppSide extends React.Component {
       inboxAnimation: 'inbox container group',
       formType: "create-list",
       listId: "",
+      listName: "",
       numToday: null,
       numTomorrow: null,
     };
@@ -67,11 +68,12 @@ class AppSide extends React.Component {
     this.setState({formType: "create-list"});
   }
 
-  handleEditList(id, e) {
+  handleEditList(id, name, e) {
     e.stopPropagation();
     this.setState({listFormOpen: true});
     this.setState({formType: "edit-list"});
     this.setState({listId: id});
+    this.setState({listName: name});
   }
 
   handleInboxAnimation() {
@@ -146,7 +148,7 @@ class AppSide extends React.Component {
           onRequestClose={this.closeModal}
           style={modalStyle}
         >
-          <ListForm closeModal={this.closeModal} formType={this.state.formType} listId={this.state.listId}/>
+          <ListForm closeModal={this.closeModal} formType={this.state.formType} listId={this.state.listId} listName={this.state.listName}/>
           <button className='cancel-add list-form-button' onClick={this.closeModal}>Cancel</button>
         </Modal>
       </div>
