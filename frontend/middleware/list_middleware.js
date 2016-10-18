@@ -1,10 +1,12 @@
 import * as ACTIONS from '../actions/list_actions';
 import * as UTILS from '../util/list_api_util';
 import { receiveAllTasks } from '../actions/task_actions';
+import { receiveError } from '../actions/error_actions';
+
 
 const ListMiddleware = (store) => (next) => (action) => {
   let success;
-  let error = (data) => console.log(data);
+  let error = (data) => store.dispatch(receiveError(data.responseJSON));
   switch (action.type) {
     case ACTIONS.FETCH_ALL_LISTS:
       success = (data) => store.dispatch(ACTIONS.receiveAllLists(data));

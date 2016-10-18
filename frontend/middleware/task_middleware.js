@@ -1,10 +1,11 @@
 import * as ACTIONS from '../actions/task_actions';
 import { fetchAllLists } from '../actions/list_actions';
 import * as UTILS from '../util/task_api_util';
+import { receiveError } from '../actions/error_actions';
 
 const TaskMiddleware = (store) => (next) => (action) => {
   let success;
-  let error = (data) => console.log(data);
+  let error = (data) => store.dispatch(receiveError(data.responseJSON));
   switch (action.type) {
     case ACTIONS.DESTROY_TASK:
       success = (data) => {

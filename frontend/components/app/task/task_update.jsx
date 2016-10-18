@@ -147,6 +147,7 @@ class TaskUpdate extends React.Component {
                             className="date-picker"
                             onChange={this.handleStartDateChange}
                             selected={this.state.startDate}
+                            maxDate={this.state.dueDate}
                             isClearable={true}
                             placeholderText="no start date"
             />
@@ -154,8 +155,9 @@ class TaskUpdate extends React.Component {
           <div className="group date">
             Due<DatePicker
                           className="date-picker"
-                          selected={this.state.dueDate}
                           onChange={this.handleDueDateChange}
+                          selected={this.state.dueDate}
+                          minDate={this.state.startDate}
                           isClearable={true}
                           placeholderText="no due date"
           />
