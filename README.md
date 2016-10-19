@@ -1,6 +1,6 @@
 # rememberthebacon
 
-[rememberthebaconlive](http://www.rememberthebacon.co/)
+[rememberthebacon live](http://www.rememberthebacon.co/)
 
 ![Sign Up](/doc/screen_shot/Signup.png)
 ![Sign In](/doc/screen_shot/Signin.png)
