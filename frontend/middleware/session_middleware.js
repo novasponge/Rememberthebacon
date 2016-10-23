@@ -1,6 +1,7 @@
 import * as ACTIONS from '../actions/session_actions';
 import * as UTIL from '../util/session_api_util';
-
+import { removeLists } from '../actions/list_actions';
+import { removeTasks } from "../actions/task_actions";
 
 const SessionMiddleware = (store) => (next) => (action) => {
   let success;
@@ -17,9 +18,12 @@ const SessionMiddleware = (store) => (next) => (action) => {
       UTIL.login(action.user, success, error);
       return next(action);
     case ACTIONS.LOGOUT:
-      success = next(action);
+      success = () => {
+        store.dispatch(removeLists());
+        store.dispatch(removeTasks());
+      };
       UTIL.logout(success);
-      break;
+      return next(action);
     default:
       return next(action);
   }

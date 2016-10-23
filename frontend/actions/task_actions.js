@@ -7,9 +7,13 @@ export const UPDATE_TASK = 'UPDATE_TASK';
 export const CREATE_TASK = 'CREATE_TASK';
 export const DESTROY_TASK = 'DESTROY_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
+export const REMOVE_TASKS = 'REMOVE_TASKS';
 export const RECEIVE_TASK_DETAIL = "RECEIVE_TASK_DETAIL";
 export const SEARCH_TASKS = "SEARCH_TASKS";
 
+export const removeTasks = () => ({
+  type: REMOVE_TASKS
+});
 
 export const searchTasks = (queryStr) => ({
   type: SEARCH_TASKS,
