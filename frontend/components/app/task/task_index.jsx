@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import { receiveAllTasks, destroyTask, receiveTaskDetail } from '../../../actions/task_actions';
 import { fetchAllLists } from '../../../actions/list_actions';
 import moment from 'moment';
+import TaskItem from './task_item';
 
 class TaskIndex extends React.Component{
   constructor(props){
@@ -12,7 +13,8 @@ class TaskIndex extends React.Component{
       completed: false,
       indexStyle: '',
       completedTab: "unclicked-tab",
-      incompleteTab: "clicked-tab"
+      incompleteTab: "clicked-tab",
+      selected: null
     };
 
     this.showCompleted = this.showCompleted.bind(this);
@@ -22,6 +24,7 @@ class TaskIndex extends React.Component{
 
   handleTaskShow(task, e) {
     this.props.receiveTaskDetail(task);
+    this.setState({selected: task.id});
   }
 
   showCompleted (e) {
@@ -45,33 +48,16 @@ class TaskIndex extends React.Component{
   render() {
     const nextTasks = this.props.tasks.filter(task=> task.completed === this.state.completed);
     const AllTasks = nextTasks.map(task => {
-      if (task.due_date) {
-        return (
-          <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
-            <div className="task-item-container">
-              <div className='task-item-name'>
-                <div className={`priority-${task.priority}`} />
-                <div >{task.name}</div>
-              </div>
-              <div className='task-due'>{moment(task.due_date).format("MMM Do")}</div>
-            </div>
-          </li>
-        );
-      } else {
-        return (
-          <li key={task.id} onClick={this.handleTaskShow.bind(this, task)}>
-            <div className="task-item-container">
-              <div className='task-item-name'>
-                <div className={`priority-${task.priority}`} />
-                <div >{task.name}</div>
-              </div>
-              <div className='task-due'>{task.due_date}</div>
-            </div>
-          </li>
-        );
-      }
+      return (
+        <TaskItem key={task.id}
+                  active={task.id === this.state.selected}
+                  priority={task.priority}
+                  name={task.name}
+                  dueDate={task.due_date}
+                  taskShow={this.handleTaskShow.bind(this, task)}
+        />
+      );
     });
-
     let completedTaskNum = 0;
     let incompleteTaskNum = 0;
     let overdue = 0;
