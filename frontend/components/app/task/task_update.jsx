@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateTask, destroyTask } from '../../../actions/task_actions';
+import { updateTask, destroyTask, receiveTaskDetail } from '../../../actions/task_actions';
 import { fetchAllLists } from '../../../actions/list_actions';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
@@ -31,6 +31,7 @@ class TaskUpdate extends React.Component {
     this._onSelectList = this._onSelectList.bind(this);
     this._onSelectPriority = this._onSelectPriority.bind(this);
     this.handleRemoveTask = this.handleRemoveTask.bind(this);
+    this.handleCancelUpdate = this.handleCancelUpdate.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -71,7 +72,7 @@ class TaskUpdate extends React.Component {
     this.setState({startDate: date});
   }
 
-  handleCompleted (e) {
+  handleCompleted () {
     const newTask = {
       name: this.state.name,
       start_date: this.state.startDate ? this.state.startDate.format("YYYY-MM-DD") : null,
@@ -90,8 +91,12 @@ class TaskUpdate extends React.Component {
     this.setState({priority: option.value});
   }
 
-  handleRemoveTask (e) {
+  handleRemoveTask () {
     this.props.destroyTask(this.props.taskDetail.id);
+  }
+
+  handleCancelUpdate () {
+    this.props.receiveTaskDetail(null);
   }
 
   render () {
@@ -132,50 +137,51 @@ class TaskUpdate extends React.Component {
       return (
         <div className="update-form-container group">
           <form className={this.state.formState} onSubmit={this.handleSubmit}>
-          <input className="task-update-name"
-                 type="text"
-                 value={this.state.name}
-                 onChange={this.handleTaskNameInput}/>
-          <div className="priority-dropdown">
-            <Dropdown
-                    options={priorityOptions}
-                    onChange={this._onSelectPriority}
-                    value={priorityDefaultOpition}/>
-          </div>
-          <div className='group date'>
-            Start<DatePicker
+            <input className="task-update-name"
+                   type="text"
+                   value={this.state.name}
+                   onChange={this.handleTaskNameInput}/>
+            <div className="priority-dropdown">
+              <Dropdown
+                      options={priorityOptions}
+                      onChange={this._onSelectPriority}
+                      value={priorityDefaultOpition}/>
+            </div>
+            <div className='group date'>
+              Start<DatePicker
+                              className="date-picker"
+                              onChange={this.handleStartDateChange}
+                              selected={this.state.startDate}
+                              maxDate={this.state.dueDate}
+                              isClearable={true}
+                              placeholderText="no start date"
+              />
+            </div>
+            <div className="group date">
+              Due<DatePicker
                             className="date-picker"
-                            onChange={this.handleStartDateChange}
-                            selected={this.state.startDate}
-                            maxDate={this.state.dueDate}
+                            onChange={this.handleDueDateChange}
+                            selected={this.state.dueDate}
+                            minDate={this.state.startDate}
                             isClearable={true}
-                            placeholderText="no start date"
+                            placeholderText="no due date"
             />
-          </div>
-          <div className="group date">
-            Due<DatePicker
-                          className="date-picker"
-                          onChange={this.handleDueDateChange}
-                          selected={this.state.dueDate}
-                          minDate={this.state.startDate}
-                          isClearable={true}
-                          placeholderText="no due date"
-          />
-          </div>
-          <div className="task-list-container group">
-            list<Dropdown
-                         options={listOptions}
-                         onChange={this._onSelectList}
-                         value={listDefaultOption}/>
-          </div>
-          <button className="update-task-button">Update task</button>
-          <div onClick={this.handleCompleted}
-            className="update-task-button">complete
-          </div>
-          <div onClick={this.handleRemoveTask}
-            className="update-task-button">Remove task
-          </div>
-        </form>
+            </div>
+            <div className="task-list-container group">
+              list<Dropdown
+                           options={listOptions}
+                           onChange={this._onSelectList}
+                           value={listDefaultOption}/>
+            </div>
+            <button className="update-task-button">Update task</button>
+            <div onClick={this.handleCompleted}
+              className="update-task-button">complete
+            </div>
+            <div onClick={this.handleRemoveTask}
+              className="update-task-button">Remove task
+            </div>
+            <button className="cancel-task-update" onClick={this.handleCancelUpdate}>close <i className="fa fa-times" aria-hidden="true"></i></button>
+          </form>
         </div>
       );
     } else {
@@ -197,7 +203,8 @@ function mapDispatchToProps(dispatch) {
   return {
     updateTask: (taskId, task, oldListId) => dispatch(updateTask(taskId, task, oldListId)),
     destroyTask: (taskId) => dispatch(destroyTask(taskId)),
-    fetchAllLists: () => dispatch(fetchAllLists())
+    fetchAllLists: () => dispatch(fetchAllLists()),
+    receiveTaskDetail: (task) => dispatch(receiveTaskDetail(task)),
   };
 }
 

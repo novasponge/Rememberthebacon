@@ -109,3 +109,15 @@
 .hidden {
   display: none;
 }
+
+.cancel-task-update {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.cancel-task-update:hover {
+  opacity: 1.0;
+}
