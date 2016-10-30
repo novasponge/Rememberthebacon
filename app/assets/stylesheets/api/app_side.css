@@ -71,7 +71,11 @@
 }
 
 .app-side-bar li:hover {
-  background-color: rgb(191, 215, 239);
+  background-color: #bfd7ee;
+}
+
+.list-selected .list-item-name{
+  color: #2263a3;
 }
 
 .inbox-clicked {

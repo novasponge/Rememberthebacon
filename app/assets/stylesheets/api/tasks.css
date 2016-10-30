@@ -81,6 +81,11 @@
   background-color: #0060bf;
   color: #fff;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.add-task:active {
+  background-color: #009dff;
 }
 
 .add-task:disabled {

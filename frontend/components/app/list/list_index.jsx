@@ -2,9 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { fetchAllLists, destroyList, receiveListDetail} from '../../../actions/list_actions';
 import { fetchListTasks, receiveTaskDetail } from '../../../actions/task_actions';
-
+import ListItem from './list_item';
 
 class ListIndex extends React.Component{
+  constructor (props) {
+    super(props);
+    this.state = {
+      selected: null
+    };
+  }
 
   componentDidMount() {
     this.props.fetchAllLists();
@@ -20,26 +26,19 @@ class ListIndex extends React.Component{
     this.props.receiveListDetail(list);
     this.props.fetchListTasks(list.id);
     this.props.receiveTaskDetail(null);
+    this.setState({selected: list.id});
   }
 
   render() {
     const allLists = this.props.lists.map(list =>
-      <li key={list.id} onClick={this.handleListShow.bind(this, list)}>
-        <div className='task-number'>{list.num_task}</div>
-        <div className="list-item-name">{list.name}</div>
-        <div className="list-item-icon">
-          <i className="fa fa-minus-square-o list-buttons"
-          aria-hidden="true"
-          onClick={this.handleRemoveClick.bind(this, list.id)}>
-          </i>
-        </div>
-        <div className="list-item-icon">
-          <i className="fa fa-pencil-square-o list-buttons"
-          aria-hidden="true"
-          onClick={this.props.handleEditList.bind(null, list.id, list.name)}>
-          </i>
-        </div>
-      </li>);
+      <ListItem active={list.id === this.state.selected}
+                key={list.id}
+                name={list.name}
+                numTask={list.num_task}
+                removeClick={this.handleRemoveClick.bind(this, list.id)}
+                editList={this.props.handleEditList.bind(null, list.id, list.name)}
+                onToggle={this.handleListShow.bind(this, list)} />
+      );
 
     return(
       <div>
