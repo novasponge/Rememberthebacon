@@ -21,10 +21,13 @@ class TaskIndex extends React.Component{
     this.showIncompleted = this.showIncompleted.bind(this);
   }
 
+  componentWillReceiveProps (nextProps) {
+    this.setState({selected:nextProps.taskDetailId});
+  }
 
   handleTaskShow(task, e) {
     this.props.receiveTaskDetail(task);
-    this.setState({selected: task.id});
+    // this.setState({selected: task.id});
   }
 
   showCompleted (e) {
@@ -113,8 +116,8 @@ class TaskIndex extends React.Component{
 }
 
 function mapStateToProps(state) {
-
   return {
+    taskDetailId: state.taskDetailId,
     tasks: Object.keys(state.tasks).map(id => state.tasks[id]),
     listDetail: state.listDetail
   };
