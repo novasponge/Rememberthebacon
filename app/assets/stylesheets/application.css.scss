@@ -63,6 +63,10 @@ img {
   left: 0;
   right: 0;
   overflow: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .color-1 {
@@ -83,4 +87,43 @@ img {
 .color-4 {
   background-color: #5bb84d;
   transition: background-color 0.3s linear;
+}
+
+.home-page-footer {
+  width: 100%;
+  height: 140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.home-page-footer h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-page-footer a {
+  color: rgb(246, 128, 5);
+}
+
+.home-page-footer a:hover {
+  color: rgb(255, 69, 0);
+  text-decoration: underline;
+}
+
+.home-page-footer li:first-child {
+  margin-right: 20px;
+}
+
+.home-page-footer li {
+  font-size: 20px;
 }
