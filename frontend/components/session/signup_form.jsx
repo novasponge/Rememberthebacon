@@ -108,6 +108,9 @@ class SignupForm extends React.Component {
                 {passwordError}
                 <button className="form-session">Sign up!</button>
               </form>
+              <a className='omniauth-google' href="/auth/google_oauth2">
+                <p>Sign up with <i className="fa fa-google google-icon" aria-hidden="true"></i>oogle</p>
+              </a>
             </div>
           </div>
         </section>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root "static_pages#root"
-
+  get 'auth/google_oauth2/callback', to: 'api/sessions#omni_create', defaults: { format: :json }
 
   namespace :api, defaults: {format: :json} do
     resource :user, only: [:create]

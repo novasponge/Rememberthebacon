@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :username, :email_address, :password_digest, :session_token, presence: true
+  validates :username, :email_address, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :username, :email_address, uniqueness: true
 
@@ -12,6 +12,16 @@ class User < ApplicationRecord
     source: :tasks
 
   after_initialize :ensure_session_token
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.username = auth.info.name
+      user.email_address = auth.info.email
+      user.save!
+    end
+  end
 
   def self.send_notification
     User.all.each do |user|

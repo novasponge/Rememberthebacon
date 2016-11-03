@@ -62,6 +62,9 @@ class LoginForm extends React.Component {
                   {errors}
                 <button className="form-session">Log in</button>
               </form>
+              <a className='omniauth-google' href="/auth/google_oauth2">
+                <p>Log in with <i className="fa fa-google google-icon" aria-hidden="true"></i>oogle</p>
+              </a>
             </div>
           </div>
         </section>

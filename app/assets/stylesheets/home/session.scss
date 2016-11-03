@@ -73,7 +73,8 @@
 }
 
 .session-username, .signup-email,
-.session-password, .session-text, .form-session {
+.session-password, .session-text,
+.form-session, .omniauth-google {
   display: block;
   font-size: 21px;
   font-weight: 500;
@@ -96,12 +97,13 @@
 }
 
 .session-username, .signup-email,
-.session-password, .form-session {
+.session-password, .form-session,
+.omniauth-google {
   margin-bottom: 10px;
   width: 400px;
 }
 
-.form-session {
+.form-session, .omniauth-google {
   margin-top: 25px;
   text-align: center;
   background-color: #009dff;
@@ -184,4 +186,9 @@
   font-weight: 500;
   opacity: 0.7;
   margin-top: 25px;
+}
+
+.omniauth-google {
+  display: flex;
+  justify-content: center;
 }

@@ -1,4 +1,14 @@
 class Api::SessionsController < ApplicationController
+  def omni_create
+    @user = User.from_omniauth(env['omniauth.auth'])
+    if @user
+      log_in!(@user)
+      redirect_to root_path
+    else
+      render json: ["unknown error"], status: 422
+    end
+  end
+
   def create
     @user = User.find_by_credentials(
       params[:user][:info],
