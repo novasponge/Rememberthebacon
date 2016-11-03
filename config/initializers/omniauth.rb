@@ -7,7 +7,3 @@ OmniAuth.config.full_host = Rails.env.production? ? 'http://www.rememberthebacon
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, '376282486981-rq8mp4h46j06t06ejd9hindfjt49flag.apps.googleusercontent.com', 'kMyKDUYEAbd9Ev-GAn3QMaV2', {client_options: {ssl: {ca_file: Rails.root.join('cacert.pem').to_s}}}
 end
-
-def haha
-
-end
