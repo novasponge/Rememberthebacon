@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-const STRONGPASSWORD = /(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$&*])(?=.*[0-9]).{6,}$/;
+const STRONGPASSWORD = /(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$&*])(?=.*[0-9]).{6,}/;
 const EMAILREG = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
 class SignupForm extends React.Component {
@@ -45,8 +45,7 @@ class SignupForm extends React.Component {
 
   handlePasswordInput(e) {
     this.setState({password: e.target.value});
-    const password = this.state.password;
-
+    const password = e.target.value;
     if (password.match(STRONGPASSWORD)) {
       this.props.clearError("Minimum 6 letters, both capital and lowercase letters, 1 symbol, and 1 number.");
     } else {
