@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-const STRONGPASSWORD = /^(?=.*[A-Z]|[a-z])(?=.*[!@#$&*])(?=.*[0-9]).{6,}$/;
+const STRONGPASSWORD = /(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$&*])(?=.*[0-9]).{6,}$/;
 const EMAILREG = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
 class SignupForm extends React.Component {
@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.errors.includes("Invalid email address") || this.props.errors.includes("Minimum 6 letters, at least 1 capital letter, 1 symbol, and 1 number." )) {
+    if (this.props.errors.includes("Invalid email address") || this.props.errors.includes("Minimum 6 letters, both capital and lowercase letters, 1 symbol, and 1 number." )) {
       return;
     } else {
       this.props.signup(this.state);
