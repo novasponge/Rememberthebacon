@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-const STRONGPASSWORD = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6,}$/;
+const STRONGPASSWORD = /^(?=.*[A-Z]|[a-z])(?=.*[!@#$&*])(?=.*[0-9]).{6,}$/;
 const EMAILREG = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
 class SignupForm extends React.Component {
