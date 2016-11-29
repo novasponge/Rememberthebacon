@@ -247,7 +247,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   dotenv
-  google-api-client
+  google-api-client (~> 0.9)
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
