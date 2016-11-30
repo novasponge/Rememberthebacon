@@ -22,7 +22,7 @@ module.exports = {
    })
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   module: {
     loaders: [
@@ -42,6 +42,10 @@ module.exports = {
         test: /\.css$/,
         loader: "style-loader!css-loader"
       },
+      {
+        test: /\.json$/,
+        loader: "json-loader"
+      }
     ]
   },
   devtool: 'source-maps'
