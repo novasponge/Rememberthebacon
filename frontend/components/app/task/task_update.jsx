@@ -4,6 +4,7 @@ import { updateTask, destroyTask, receiveTaskDetail } from '../../../actions/tas
 import { fetchAllLists } from '../../../actions/list_actions';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import momentTimezone from 'moment-timezone';
 import Dropdown from 'react-dropdown';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -37,6 +38,7 @@ class TaskUpdate extends React.Component {
   componentWillReceiveProps(nextProps){
     if (nextProps.taskDetail) {
       this.setState({
+        completed: nextProps.taskDetail.completed,
         name: nextProps.taskDetail.name,
         startDate: nextProps.taskDetail.start_date ? moment(nextProps.taskDetail.start_date, "YYYY-MM-DD") : null,
         dueDate: nextProps.taskDetail.due_date ? moment(nextProps.taskDetail.due_date, "YYYY-MM-DD") : null,
@@ -55,8 +57,9 @@ class TaskUpdate extends React.Component {
       due_date: this.state.dueDate ? this.state.dueDate.format("YYYY-MM-DD") : null,
       priority: this.state.priority,
       list_id: this.state.listId,
+      completed: this.state.completed,
+      tz : moment.tz.guess()
     };
-
     this.props.updateTask(this.props.taskDetail.id, newTask, this.state.oldListId);
   }
 

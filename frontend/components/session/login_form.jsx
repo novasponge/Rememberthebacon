@@ -33,7 +33,7 @@ class LoginForm extends React.Component {
   }
 
   render(){
-    const errors = this.props.errors.map((error, idx) => <div className='user-error'>{error}</div>);
+    const errors = this.props.errors.map((error, idx) => <div key={idx} className='user-error'>{error}</div>);
     return(
       <section className="session-body group">
         <div className="session-side group">

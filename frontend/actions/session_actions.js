@@ -16,8 +16,8 @@ export const logout = () => ({
 });
 
 export const login = (user) => ({
-  type: LOGIN,
-  user
+    type: LOGIN,
+    user
 });
 
 export const receiveCurrentUser = (currentUser) => ({
