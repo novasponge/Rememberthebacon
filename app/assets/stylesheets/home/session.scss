@@ -74,7 +74,7 @@
 
 .session-username, .signup-email,
 .session-password, .session-text,
-.form-session, .omniauth-google {
+.form-session, .omniauth-google-text {
   display: block;
   font-size: 21px;
   font-weight: 500;
@@ -103,7 +103,7 @@
   width: 400px;
 }
 
-.form-session, .omniauth-google {
+.form-session, .omniauth-google-container {
   margin-top: 25px;
   text-align: center;
   background-color: #009dff;
@@ -191,4 +191,28 @@
 .omniauth-google {
   display: flex;
   justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.google-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  padding: 8px 24px 8px 10px;
+}
+
+.google-logo {
+  background-image: asset-url('g-logo.png');
+  width: 21px;
+  height: 21px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.omniauth-google-text {
+  margin-bottom: 0;
+  border: none;
+  font-family: 'Roboto', sans-serif;
 }

@@ -107,8 +107,12 @@ class SignupForm extends React.Component {
                 {passwordError}
                 <button className="form-session">Sign up!</button>
               </form>
+              <p>To sync with your Google calendar</p>
               <a className='omniauth-google' href="/auth/google_oauth2">
-                <p>Sign up with <i className="fa fa-google google-icon" aria-hidden="true"></i>oogle calendar</p>
+                <div className='google-logo-container'>
+                  <div className='google-logo'/>
+                </div>
+                <p className='omniauth-google-text'>Sign in with Google</p>
               </a>
             </div>
           </div>
