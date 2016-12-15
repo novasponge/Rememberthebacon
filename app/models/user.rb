@@ -37,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def tomorrow_tasks_number
-    tomorrow = Date.tomorrow.to_s
+    tomorrow = (Date.today + 1.day).to_s
     tasks.where(due_date: tomorrow).where(completed: false).count
   end
 
