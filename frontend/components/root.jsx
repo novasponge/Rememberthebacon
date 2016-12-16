@@ -13,13 +13,19 @@ const Root = ({ store }) => {
     }
   };
 
+  const requireAuth = (nextState, replace) => {
+    if (!store.getState().session.currentUser) {
+      replace('/')
+    }
+  }
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path='/' component={Home} onEnter={_redirectIfLoggedIn}/>
         <Route path='/login' component={LoginFormContainer} onEnter={_redirectIfLoggedIn} />
         <Route path='/signup' component={SignupFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path='/app' component={AppContainer} />
+        <Route path='/app' component={AppContainer} onEnter={requireAuth}/>
       </Router>
     </Provider>
   )

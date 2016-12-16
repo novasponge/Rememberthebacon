@@ -3,7 +3,7 @@ import GreetingContainer from './greeting/greeting_container';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import Carousel from 'nuka-carousel';
-import Footer from './footer'
+import Footer from './footer';
 
 class Home extends React.Component {
   constructor(props) {
