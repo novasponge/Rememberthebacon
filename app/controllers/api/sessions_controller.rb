@@ -10,6 +10,10 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def csrf_token
+    render json: { auth_token: form_authenticity_token }
+  end
+
   def create
     @user = User.find_by_credentials(
       params[:user][:info],
